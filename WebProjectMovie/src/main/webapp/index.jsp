@@ -29,7 +29,7 @@
 		<img src="https://img.megabox.co.kr/SharedImg/2023/11/15/OM0860oG9r27Dz8NvMXxZJqydpkEwMdK_420.jpg" alt="나폴레옹" onerror="noImg(this, 'main');">
 	</div>
 	<div id ="test2">
-		스스로 황제가 된 영웅!
+		스스로 황제가 된 영웅! 인가?
 		<br><br>
 		1793년 혁명의 불꽃이 프랑스 전역을 밝히기 시작한다. 코르시카 출신의 장교 '나폴레옹'(호아킨 피닉스)은
 		<br>
