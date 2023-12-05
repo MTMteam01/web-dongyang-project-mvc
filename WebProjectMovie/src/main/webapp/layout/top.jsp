@@ -43,12 +43,12 @@
     <script>
         function redirectToLoginPage() {
             // Replace 'login.jsp' with the actual URL of the login page
-            window.location.href = './login/loginForm2.jsp';
+            window.location.href = './login/loginForm.jsp';
         }
         
         function redirectToRegisterPage() {
             // Replace 'login.jsp' with the actual URL of the login page
-            window.location.href = './login/RegisterPage.jsp';
+            window.location.href = './register/RegisterPage.jsp';
         }
     </script>
 </html>
