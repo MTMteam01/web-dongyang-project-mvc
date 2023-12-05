@@ -61,7 +61,7 @@
 		body {
             background-color: black;
             font-family: Arial, sans-serif;
-            }
+        }
         .bo {
             text-align: center;
         }
