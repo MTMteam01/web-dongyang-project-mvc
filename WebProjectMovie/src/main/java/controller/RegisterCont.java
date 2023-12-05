@@ -1,4 +1,4 @@
-package Register;
+package controller;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Register.MemberDAO;
-import Register.MemberDTO;
+import Model.MemberDAO;
+import Model.MemberDTO;
 
 @WebServlet("/register.do")
 public class RegisterCont extends HttpServlet {
@@ -42,7 +42,7 @@ public class RegisterCont extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 			dispatcher.forward(request, response);
 		}else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/login/RegisterPage.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/register/RegisterPage.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

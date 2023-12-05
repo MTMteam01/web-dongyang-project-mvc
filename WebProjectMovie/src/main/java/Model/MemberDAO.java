@@ -1,10 +1,9 @@
-package Register;
+package Model;
 
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 
 import common.JDBCUtil;
 
@@ -28,7 +27,7 @@ public class MemberDAO {
             rs = pstmt.executeQuery();
             loginCon = rs.next();
         } catch (Exception ex) {
-            System.out.println("Exception" + ex);
+            ex.printStackTrace();
         } finally {
         	JDBCUtil.close(rs, pstmt, conn);
         }

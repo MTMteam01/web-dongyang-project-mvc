@@ -1,4 +1,4 @@
-package Register;
+package Model;
 
 public class MemberDTO {
 
