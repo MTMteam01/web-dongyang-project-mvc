@@ -61,14 +61,11 @@
 		body {
             background-color: black;
             font-family: Arial, sans-serif;
+            color: #95a5a6 !important;
         }
         .bo {
             text-align: center;
         }
-		.poster {
-			width : 20%;
-			margin : 10px;
-		}
 		#Box_Office {
 			left: 10%;
 			text-align: center;
@@ -90,11 +87,11 @@
 		}
         .nav-link,
         .text-muted {
-            color: #95a5a6 !important; /* Mint color /
+            color: #95a5a6 !important; /* Mint color */
         }
 		
         .nav-link:hover {
-            color: #68c1a6 !important; / Darker mint color when hovering */
+            color: #68c1a6 !important; /* Darker mint color when hovering */
         }
         .mv{
         	text-align: center;
