@@ -6,7 +6,7 @@ public class MemberDTO {
     private String password;
     private String name;
     private String phone;
-    private int authority;
+    private String authority;
     
 	public String getId() {
 		return id;
@@ -32,10 +32,10 @@ public class MemberDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getAuth() {
+	public String getAuth() {
 		return authority;
 	}
-	public void setAuth(int Auth) {
+	public void setAuth(String Auth) {
 		this.authority = Auth;
 	}
 

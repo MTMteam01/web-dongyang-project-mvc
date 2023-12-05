@@ -26,14 +26,12 @@ public class RegisterCont extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String authority = request.getParameter("auth"); //HTML에서 radio태그를 통해 불러온 권한 값을 저장
 		
-		int auth = Integer.parseInt(authority); //String으로 되어있는 권한사항을 int값으로 바꿈
-		
 		MemberDTO mDto = new MemberDTO();
 		mDto.setId(id);
 		mDto.setPassword(pw);
 		mDto.setName(name);
 		mDto.setPhone(phone);
-		mDto.setAuth(auth);
+		mDto.setAuth(authority);
 		
 		MemberDAO mDao = new MemberDAO();	
 		boolean insertCheck = mDao.userInsert(mDto);
@@ -44,7 +42,7 @@ public class RegisterCont extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 			dispatcher.forward(request, response);
 		}else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("회원가입 페이지로 리로드");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/login/RegisterPage.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

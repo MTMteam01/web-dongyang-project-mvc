@@ -51,7 +51,7 @@ public class MemberDAO {
             pstmt.setString(2, mDTO.getPassword());
             pstmt.setString(3, mDTO.getName());
             pstmt.setString(4, mDTO.getPhone());
-            pstmt.setInt(5, mDTO.getAuth());
+            pstmt.setString(5, mDTO.getAuth());
 
             int count = pstmt.executeUpdate();
 
