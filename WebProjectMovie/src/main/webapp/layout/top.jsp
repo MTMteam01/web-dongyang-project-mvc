@@ -24,11 +24,13 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-dark me-2">로그인</button>
-        <button type="button" class="btn btn-dark">회원가입</button>
+        <button type="button" class="btn btn-dark me-2" onclick="redirectToLoginPage()">로그인</button>
+        <button type="button" class="btn btn-dark" onclick="redirectToRegisterPage()">회원가입</button>
+        
       </div>
     </header>
-  </div>
+  </div
+  >
 </body>
 <style>
     /* 제목 스타일 설정 */
@@ -38,4 +40,15 @@
         font-family: 'Georgia', sans-serif;
     }
 </style>
+    <script>
+        function redirectToLoginPage() {
+            // Replace 'login.jsp' with the actual URL of the login page
+            window.location.href = './login/loginForm2.jsp';
+        }
+        
+        function redirectToRegisterPage() {
+            // Replace 'login.jsp' with the actual URL of the login page
+            window.location.href = './login/RegisterPage.jsp';
+        }
+    </script>
 </html>

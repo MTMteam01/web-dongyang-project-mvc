@@ -1,4 +1,4 @@
-package MovieDB;
+package Register;
 
 
 import java.sql.Connection;
@@ -100,7 +100,6 @@ public class MemberDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         boolean flag = false;
-        
         try {
         	conn = JDBCUtil.getConnection();
             String strQuery = "update users set password = ?, name = ?, phone = ? where id = ?";

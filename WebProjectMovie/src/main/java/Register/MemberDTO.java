@@ -1,4 +1,4 @@
-package MovieDB;
+package Register;
 
 public class MemberDTO {
 
