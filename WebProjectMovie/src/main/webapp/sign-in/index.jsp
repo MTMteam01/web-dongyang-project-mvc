@@ -4,41 +4,39 @@
   <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="../assets/js/color-modes.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.118.2">
+  
     <title>로그인 템플릿 · Bootstrap v5.3</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
     <style>
     html,
-body {
-  height: 100%;
-}
-
-.form-signin {
-  max-width: 330px;
-  padding: 1rem;
-}
-
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+    body {
+    height: 100%;
+    }
+    
+    body {
+    display: flex;
+    flex-direction: column;
+    }
+	.form-signin {
+	  max-width: 330px;
+	  padding: 1rem;
+	}
+	
+	.form-signin .form-floating:focus-within {
+	  z-index: 2;
+	}
+	
+	.form-signin input[type="email"] {
+	  margin-bottom: -1px;
+	  border-bottom-right-radius: 0;
+	  border-bottom-left-radius: 0;
+	}
+	
+	.form-signin input[type="password"] {
+	  margin-bottom: 10px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
     
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -117,8 +115,9 @@ body {
         display: block !important;
       }
     </style>
-    <link href="sign-in.css" rel="stylesheet">
   </head>
+  <body>
+  <%@ include file="../../layout/top.jsp" %>
   <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
@@ -192,5 +191,7 @@ body {
       </form>
     </main>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <%@ include file="../../layout/footer.jsp" %>
   </body>
 </html>
