@@ -43,7 +43,7 @@
     <script>
         function redirectToLoginPage() {
             // Replace 'login.jsp' with the actual URL of the login page
-            window.location.href = '/WebProjectMovie/login/loginForm3.jsp';
+            window.location.href = '/WebProjectMovie/login/loginForm.jsp';
         }
         
         function redirectToRegisterPage() {

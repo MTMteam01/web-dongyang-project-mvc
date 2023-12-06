@@ -22,6 +22,7 @@ public class LoginCont extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String password = request.getParameter("password");
+        System.out.println("받아온 id = " + request.getParameter("id"));
 
 		MemberDTO mDto = new MemberDTO();
 		mDto.setId(id);
@@ -33,9 +34,9 @@ public class LoginCont extends HttpServlet {
         if (loginResult) {
             HttpSession session = request.getSession();
             session.setAttribute("id", id);
-            response.sendRedirect("login/welcome.jsp"); // 로그인 성공 시 이동할 페이지
+            response.sendRedirect("/WebProjectMovie/index.jsp"); // 로그인 성공 시 이동할 페이지
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login/loginForm3.jsp"); // 로그인 실패 시 이동할 페이지
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login/loginForm.jsp"); // 로그인 실패 시 이동할 페이지
             request.setAttribute("errorMessage", "Invalid credentials. Please try again.");
             dispatcher.forward(request, response);
         }

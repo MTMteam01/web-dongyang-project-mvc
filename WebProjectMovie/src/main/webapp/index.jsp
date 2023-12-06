@@ -14,6 +14,8 @@
 <%@ include file="layout/top.jsp" %>
 
 <div id = "Box_Office">
+	<%String memid = (String)session.getAttribute("id"); %>
+	<%= memid %> 님 환영합니다
 	<h1 class="bo" style="background-color:black;">
 	박스 오피스
 	</h1>
