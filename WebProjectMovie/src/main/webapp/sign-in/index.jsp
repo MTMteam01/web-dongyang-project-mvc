@@ -5,17 +5,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   
-    <title>로그인 템플릿 · Bootstrap v5.3</title>
+    <title>loginForm</title>
 
     <style>
     html,
     body {
     height: 100%;
+    background-color: #999;
     }
     
     body {
     display: flex;
     flex-direction: column;
+
     }
 	.form-signin {
 	  max-width: 330px;
@@ -170,7 +172,7 @@
     </div>
     <main class="form-signin w-100 m-auto">
       <form>
-        <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+       
         <h1 class="h3 mb-3 fw-normal">로그인 해주세요</h1>
         <div class="form-floating">
           <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">

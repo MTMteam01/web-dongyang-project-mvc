@@ -20,5 +20,11 @@
 	</p>
   </footer>
 </div>
+<style>
+	body{
+		color:grey;
+	}
+
+</style>
 
 </body>
