@@ -13,17 +13,26 @@
 <%@ include file="../layout/top.jsp" %>
 <div class="joinForm">
 	<form method="GET" action="/WebProjectMovie/register.do">
-		ID &nbsp; &nbsp;&nbsp;&nbsp; :
-		<input type="text" class="inp"  style="background:transparent;" name="id" size="15"> <br>
+	<br>
+	<h3>회원가입</h3>
+	<br><br>
+		ID &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+		<input type="text" class="inp"  style="background:transparent;color:white;" name="id" size="15"> <br>
 		<br>	
-		PASS &nbsp;&nbsp; : 
-		<input type="text" class="inp"  style="background:transparent;" name="password" size="15"> <br>
+		PASS &nbsp;&nbsp;&nbsp;&nbsp; : 
+		<input type="text" class="inp"  style="background:transparent;color:white;" name="password" size="15"> <br>
 		<br>
-		NAME &nbsp; : 
-		<input type="text" class="inp"  style="background:transparent;" name="name" size="15"> <br>
+		NAME &nbsp;&nbsp;&nbsp; : 
+		<input type="text" class="inp"  style="background:transparent;color:white;" name="name" size="15"> <br>
 		<br>
-		PHONE : 
-		<input type="text" class="inp"  style="background:transparent;" name="phone" size="15"> <br>
+		PHONE &nbsp;&nbsp; : 
+		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 010-1234-5678" name="phone" size="15"> <br>
+		<br>
+		EMAIL &nbsp;&nbsp;&nbsp;: 
+		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) example@gmail.com " name="phone" size="15"> <br>
+		<br>
+		BIRTH &nbsp;&nbsp;&nbsp; : 
+		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 020927" name="phone" size="15"> <br>
 		<br>
 		AUTH
 		<br><br>
