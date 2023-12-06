@@ -44,14 +44,16 @@ public class MemberDAO {
         
         try {
         	conn = JDBCUtil.getConnection();
-            String strQuery = "insert into users values(?,?,?,?,?)";
+            String strQuery = "insert into users values(?,?,?,?,?,?,?)";
             pstmt = conn.prepareStatement(strQuery);
             pstmt.setString(1, mDTO.getId());
             pstmt.setString(2, mDTO.getPassword());
             pstmt.setString(3, mDTO.getName());
             pstmt.setString(4, mDTO.getPhone());
-            pstmt.setString(5, mDTO.getAuth());
-
+            pstmt.setString(5, mDTO.getEmail());
+            pstmt.setString(6, mDTO.getBirth());
+            pstmt.setString(7, "고객");
+            
             int count = pstmt.executeUpdate();
 
             if (count == 1) {
@@ -94,19 +96,21 @@ public class MemberDAO {
         return flag;
     }
     
-    public boolean userUpdate(String id, String password, String name, String phone) {
+    public boolean userUpdate(String id, String password, String name, String phone, String email, String birth) {
     	Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         boolean flag = false;
         try {
         	conn = JDBCUtil.getConnection();
-            String strQuery = "update users set password = ?, name = ?, phone = ? where id = ?";
+            String strQuery = "update users set password = ?, name = ?, phone = ?, email =?, birth = ?, where id = ?";
             pstmt = conn.prepareStatement(strQuery);
             pstmt.setString(1, password);
             pstmt.setString(2, name);
             pstmt.setString(3, phone);
-            pstmt.setString(4, id);
+            pstmt.setString(4, email);
+            pstmt.setString(5, birth);
+            pstmt.setString(6, id);
 
             int count = pstmt.executeUpdate();
 

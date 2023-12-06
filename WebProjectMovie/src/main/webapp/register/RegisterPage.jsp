@@ -29,17 +29,10 @@
 		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 010-1234-5678" name="phone" size="15"> <br>
 		<br>
 		EMAIL &nbsp;&nbsp;&nbsp;: 
-		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) example@gmail.com " name="phone" size="15"> <br>
+		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) example@gmail.com " name="email" size="15"> <br>
 		<br>
 		BIRTH &nbsp;&nbsp;&nbsp; : 
-		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 020927" name="phone" size="15"> <br>
-		<br>
-		AUTH
-		<br><br>
-		고객 
-		<input type="radio" name="auth" value="Customer">  
-		관리자 
-		<input type="radio" name="auth" value="Manager">
+		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 020927" name="birth" size="15"> <br>
 		<br>
 		<br>
 		<br>
