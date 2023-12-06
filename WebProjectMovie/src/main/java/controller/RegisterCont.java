@@ -24,14 +24,16 @@ public class RegisterCont extends HttpServlet {
 		String pw = request.getParameter("password");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		String authority = request.getParameter("auth"); //HTML에서 radio태그를 통해 불러온 권한 값을 저장
+		String email = request.getParameter("email");
+		String birth = request.getParameter("birth");
 		
 		MemberDTO mDto = new MemberDTO();
 		mDto.setId(id);
 		mDto.setPassword(pw);
 		mDto.setName(name);
 		mDto.setPhone(phone);
-		mDto.setAuth(authority);
+		mDto.setEmail(email);
+		mDto.setBirth(birth);
 		
 		MemberDAO mDao = new MemberDAO();	
 		boolean insertCheck = mDao.userInsert(mDto);
