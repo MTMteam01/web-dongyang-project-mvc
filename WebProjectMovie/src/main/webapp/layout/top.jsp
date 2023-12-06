@@ -15,12 +15,12 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/WebProjectMovie/index.jsp" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Movie</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">OST</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">RESERVE</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">MY PAGE</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">HELP</a></li>
+        <li><a href="/WebProjectMovie/index.jsp" class="nav-link px-2 link-secondary text-reset">Home</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark text-reset">Movie</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark text-reset">OST</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark text-reset">MY PAGE</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark text-reset">HELP</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
@@ -33,6 +33,9 @@
   >
 </body>
 <style>
+	.container {
+	color: #95a5a6 !important;
+	}
     /* 제목 스타일 설정 */
     .title {
         text-align: center;
