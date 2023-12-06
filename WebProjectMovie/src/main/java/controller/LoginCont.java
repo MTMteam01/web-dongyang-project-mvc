@@ -10,13 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Model.MemberDAO;
+import Model.MemberDTO;
 
 @WebServlet("/Login.do")
 public class LoginCont extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String password = request.getParameter("password");
 
+		MemberDTO mDto = new MemberDTO();
+		mDto.setId(id);
+		mDto.setPassword(password);
+        
         MemberDAO memberDAO = new MemberDAO();
         boolean loginResult = memberDAO.loginCheck(id, password);
 
@@ -25,7 +35,7 @@ public class LoginCont extends HttpServlet {
             session.setAttribute("id", id);
             response.sendRedirect("login/welcome.jsp"); // 로그인 성공 시 이동할 페이지
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login/loginForm.jsp"); // 로그인 실패 시 이동할 페이지
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login/loginForm3.jsp"); // 로그인 실패 시 이동할 페이지
             request.setAttribute("errorMessage", "Invalid credentials. Please try again.");
             dispatcher.forward(request, response);
         }

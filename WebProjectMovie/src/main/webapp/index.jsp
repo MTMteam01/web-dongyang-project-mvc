@@ -14,7 +14,7 @@
 <%@ include file="layout/top.jsp" %>
 
 <div id = "Box_Office">
-	<h1 class="bo" style="background-color:black">
+	<h1 class="bo" style="background-color:black;">
 	박스 오피스
 	</h1>
 	<img src="https://img.megabox.co.kr/SharedImg/2023/11/22/aM1zeiVGySigNObspcjcoH9NaebEPa2f_420.jpg" alt="서울의 봄" class="poster" onerror="noImg(this, 'main');">

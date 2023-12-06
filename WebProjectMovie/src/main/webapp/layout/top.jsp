@@ -15,7 +15,7 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="/WebProjectMovie/index.jsp" class="nav-link px-2 link-secondary">Home</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">Movie</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">OST</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">RESERVE</a></li>
@@ -43,12 +43,12 @@
     <script>
         function redirectToLoginPage() {
             // Replace 'login.jsp' with the actual URL of the login page
-            window.location.href = './login/loginForm.jsp';
+            window.location.href = '/WebProjectMovie/login/loginForm3.jsp';
         }
         
         function redirectToRegisterPage() {
             // Replace 'login.jsp' with the actual URL of the login page
-            window.location.href = './register/RegisterPage.jsp';
+            window.location.href = '/WebProjectMovie/register/RegisterPage.jsp';
         }
     </script>
 </html>
