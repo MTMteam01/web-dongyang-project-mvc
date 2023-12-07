@@ -19,6 +19,6 @@ public class LogoutCont extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate(); // 세션 무효화
 
-        response.sendRedirect("login/loginForm3.jsp"); // 로그아웃 후 이동할 페이지
+        response.sendRedirect("login/loginForm.jsp"); // 로그아웃 후 이동할 페이지
     }
 }

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
++<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,12 +15,12 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="../home/index.jsp" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="../movieForm.jsp" class="nav-link px-2 link-dark">Movie</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">OST</a></li>
-        <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark">RESERVE</a></li>
-        <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark">MY PAGE</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">HELP</a></li>
+        <li><a href="/WebProjectMovie/home/index.jsp" class="nav-link px-2 link-secondary text-reset">Home</a></li>
+        <li><a href="../movieForm.jsp" class="nav-link px-2 link-dark text-reset">Movie</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark text-reset">OST</a></li>
+        <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
+        <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark text-reset">MY PAGE</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark text-reset">HELP</a></li>
       </ul>
       <div class="col-md-3 text-end">
         <button type="button" class="btn btn-dark me-2" onclick="redirectToLoginPage()">로그인</button>
