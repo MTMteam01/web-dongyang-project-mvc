@@ -11,7 +11,7 @@
 <body>
 
 
-<%@ include file="layout/top.jsp" %>
+<%@ include file="../layout/top.jsp" %>
 
 <div id = "Box_Office">
 	<%String memid = (String)session.getAttribute("id"); %>
@@ -55,7 +55,8 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UxrRXOPDkR4?si=QHIpVR74UFRt12X-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </div>
-<%@ include file="layout/footer.jsp" %>
+
+<%@ include file="../layout/footer.jsp" %>
 
 
 </body>

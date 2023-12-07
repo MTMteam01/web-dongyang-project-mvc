@@ -19,31 +19,23 @@
 		ID &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
 		<input type="text" class="inp"  style="background:transparent;color:white;" name="id" size="15"> <br>
 		<br>	
-		PASS &nbsp;&nbsp;&nbsp;&nbsp; : 
+		PW &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
 		<input type="text" class="inp"  style="background:transparent;color:white;" name="password" size="15"> <br>
 		<br>
 		NAME &nbsp;&nbsp;&nbsp; : 
-		<input type="text" class="inp"  style="background:transparent;color:white;" name="name" size="15"> <br>
+		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 홍길동" name="name" size="15"> <br>
 		<br>
 		PHONE &nbsp;&nbsp; : 
-		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 010-1234-5678" name="phone" size="15"> <br>
+		<input type="tel" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 010-1234-5678" name="phone" size="15"> <br>
 		<br>
 		EMAIL &nbsp;&nbsp;&nbsp;: 
-		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) example@gmail.com " name="phone" size="15"> <br>
+		<input type="email" class="inp"  style="background:transparent;color:white;" placeholder=" ex) example@gmail.com " name="phone" size="15"> <br>
 		<br>
 		BIRTH &nbsp;&nbsp;&nbsp; : 
 		<input type="text" class="inp"  style="background:transparent;color:white;" placeholder=" ex) 020927" name="phone" size="15"> <br>
 		<br>
-		AUTH
-		<br><br>
-		고객 
-		<input type="radio" name="auth" value="Customer">  
-		관리자 
-		<input type="radio" name="auth" value="Manager">
 		<br>
-		<br>
-		<br>
-		<input type="submit" style="background:transparent;color:rgb(162, 220, 209);" value="회원가입">		
+		<input type="submit" style="background:transparent;color:rgb(162, 220, 209);" value="Sign Up">		
 	</form>	
 </div>
 

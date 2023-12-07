@@ -15,11 +15,11 @@
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/WebProjectMovie/index.jsp" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Movie</a></li>
+        <li><a href="../home/index.jsp" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="../movieForm.jsp" class="nav-link px-2 link-dark">Movie</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">OST</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">RESERVE</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">MY PAGE</a></li>
+        <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark">RESERVE</a></li>
+        <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark">MY PAGE</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">HELP</a></li>
       </ul>
 

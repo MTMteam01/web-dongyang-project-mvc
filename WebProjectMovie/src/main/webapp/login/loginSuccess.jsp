@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../index.jsp" flush=”false” />
+<jsp:include page="../home/index.jsp" flush=”false” />
 </body>
 </html>
