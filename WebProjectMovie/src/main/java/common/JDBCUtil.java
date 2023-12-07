@@ -9,7 +9,7 @@ public class JDBCUtil {
 	public static Connection getConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/reservationuser?serverTimezone=UTC&useSSL=false&characterEncoding=utf-8","root","root");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/reservationuser?serverTimezone=UTC&useSSL=false&characterEncoding=utf-8","root","1234");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

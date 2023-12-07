@@ -143,12 +143,9 @@
         <p>${errorMessage}</p>
         </c:if>
     </main>
-<<<<<<< HEAD
+
   </body>
   <%@ include file="../layout/footer.jsp" %>
-=======
-  <%@ include file="../../layout/footer.jsp" %>
->>>>>>> 5ddfd5015caba69b4964e269395a732cb85f1103
   </body>
   <style>
       /* 제목 스타일 설정 */

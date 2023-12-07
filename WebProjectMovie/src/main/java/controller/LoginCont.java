@@ -34,7 +34,7 @@ public class LoginCont extends HttpServlet {
         if (loginResult) {
             HttpSession session = request.getSession();
             session.setAttribute("id", id);
-            response.sendRedirect("/WebProjectMovie/index.jsp"); // 로그인 성공 시 이동할 페이지
+            response.sendRedirect("./home/index.jsp"); // 로그인 성공 시 이동할 페이지
         } else {
             RequestDispatcher dispatcher = request.getRequestDispatcher("login/loginForm.jsp"); // 로그인 실패 시 이동할 페이지
             request.setAttribute("errorMessage", "Invalid credentials. Please try again.");
