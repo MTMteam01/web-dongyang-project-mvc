@@ -6,7 +6,8 @@ public class MemberDTO {
     private String password;
     private String name;
     private String phone;
-    private String authority;
+    private String email;
+    private String birth;
     
 	public String getId() {
 		return id;
@@ -32,14 +33,17 @@ public class MemberDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getAuth() {
-		return authority;
+	public String getEmail() {
+		return email;
 	}
-	public void setAuth(String Auth) {
-		this.authority = Auth;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-
-
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
 }
 

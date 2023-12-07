@@ -21,8 +21,6 @@
         <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark">RESERVE</a></li>
         <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark">MY PAGE</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">HELP</a></li>
-      </ul>
-
       <div class="col-md-3 text-end">
         <button type="button" class="btn btn-dark me-2" onclick="redirectToLoginPage()">로그인</button>
         <button type="button" class="btn btn-dark" onclick="redirectToRegisterPage()">회원가입</button>
@@ -33,6 +31,9 @@
   >
 </body>
 <style>
+	.container {
+	color: #95a5a6 !important;
+	}
     /* 제목 스타일 설정 */
     .title {
         text-align: center;

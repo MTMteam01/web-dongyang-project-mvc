@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html>
   <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -8,6 +8,7 @@
     <style>
     html,
     body {
+    color: #95a5a6 !important;
     height: 100%;
     }
     
@@ -15,26 +16,26 @@
     display: flex;
     flex-direction: column;
     }
-	.form-signin {
-	  max-width: 330px;
-	  padding: 1rem;
-	}
-	
-	.form-signin .form-floating:focus-within {
-	  z-index: 2;
-	}
-	
-	.form-signin input[type="email"] {
-	  margin-bottom: -1px;
-	  border-bottom-right-radius: 0;
-	  border-bottom-left-radius: 0;
-	}
-	
-	.form-signin input[type="password"] {
-	  margin-bottom: 10px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
-	}
+   .form-signin {
+     max-width: 330px;
+     padding: 1rem;
+   }
+   
+   .form-signin .form-floating:focus-within {
+     z-index: 2;
+   }
+   
+   .form-signin input[type="email"] {
+     margin-bottom: -1px;
+     border-bottom-right-radius: 0;
+     border-bottom-left-radius: 0;
+   }
+   
+   .form-signin input[type="password"] {
+     margin-bottom: 10px;
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+   }
     
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -114,25 +115,19 @@
       }
     </style>
   </head>
-  
-  <body>
-  
   <%@ include file="../../layout/top.jsp" %>
   
-  <body class="d-flex align-items-center py-4 bg-body-tertiary">
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-    </svg>
+  <body class="d-flex align-items-center py-4 bg-black">
     <main class="form-signin w-100 m-auto">
     
       <form action="/WebProjectMovie/Login.do" method="post">
-        <img class="mb-4" src="" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">로그인 해주세요</h1>
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <div class="form-floating">
-          <input type="text" class="form-control" name="id" id="id" placeholder="아이디">
+          <input type="text" class="form-control bg-black" name="id" id="id" placeholder="아이디">
           <label for="id">아이디</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호">
+          <input type="password" class="form-control bg-black" name="password" id="password" placeholder="비밀번호">
           <label for="password">비밀번호</label>
         </div>
         <div class="form-check text-start my-3">
@@ -142,13 +137,25 @@
           </label>
         </div>
         <input type="submit" class="btn btn-primary w-100 py-2" value="로그인">
-        <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
+        <p class="mt-5 mb-3 text-body-secondary text-reset">&copy; 2023</p>
       </form>
         <c:if test="${not empty errorMessage}">
         <p>${errorMessage}</p>
         </c:if>
     </main>
+<<<<<<< HEAD
   </body>
   <%@ include file="../layout/footer.jsp" %>
+=======
+  <%@ include file="../../layout/footer.jsp" %>
+>>>>>>> 5ddfd5015caba69b4964e269395a732cb85f1103
   </body>
+  <style>
+      /* 제목 스타일 설정 */
+    .title {
+        text-align: center;
+        color: rgb(162, 220, 209);
+        font-family: 'Georgia', sans-serif;
+    }
+    </style>
 </html>
