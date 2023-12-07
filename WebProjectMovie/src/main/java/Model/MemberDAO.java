@@ -4,6 +4,8 @@ package Model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.*;
 
 import common.JDBCUtil;
 
@@ -69,18 +71,17 @@ public class MemberDAO {
         return flag;
     }
     
-    public boolean userDelete(String id) {
+    public boolean userDelete(MemberDTO mDTO) {
     	Connection conn = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
         boolean flag = false;
         
         try {
         	conn = JDBCUtil.getConnection();
             String strQuery = "delete from users where id = ?";
             pstmt = conn.prepareStatement(strQuery);
-            pstmt.setString(1, id);
-
+            pstmt.setString(1, mDTO.getId());
+            System.out.println(pstmt);
             int count = pstmt.executeUpdate();
 
             if (count == 1) {
@@ -90,7 +91,7 @@ public class MemberDAO {
         } catch (Exception ex) {
             System.out.println("Exception" + ex);
         } finally {
-        	JDBCUtil.close(rs, pstmt, conn);
+        	JDBCUtil.close(pstmt, conn);
         }
         
         return flag;
@@ -126,5 +127,37 @@ public class MemberDAO {
         
         return flag;
     	
+    }
+    
+    public List<Map<String, String>> MemberList() {
+    	List<Map<String, String>> members = new ArrayList<>();
+    	Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+        	conn = JDBCUtil.getConnection();
+            String strQuery = "select * from users";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(strQuery);
+            
+            while(rs.next()) {
+            	 Map<String, String> member = new HashMap<>();
+                 member.put("id", rs.getString("id"));
+                 member.put("password", rs.getString("password"));
+                 member.put("name", rs.getString("name"));
+                 member.put("phone", rs.getString("phone"));
+                 member.put("email", rs.getString("email"));
+                 member.put("birth", rs.getString("birth"));
+
+                 members.add(member);    	
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Exception" + ex);
+        } finally {
+        	JDBCUtil.close(rs, stmt, conn);
+        }
+        return members;
     }
 }
