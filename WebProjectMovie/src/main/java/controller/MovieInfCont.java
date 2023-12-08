@@ -45,8 +45,7 @@ public class MovieInfCont extends HttpServlet {
 				
 				saveToDatabase(rank, movieNm, openDt);
 		    }
-		    RequestDispatcher dispatcher = request.getRequestDispatcher("TEST!!!/ManagerPage.jsp"); 
-            dispatcher.forward(request, response);
+		    response.sendRedirect("TEST!!!/ManagerPage.jsp");
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -83,12 +82,7 @@ public class MovieInfCont extends HttpServlet {
             // 데이터베이스 연결
             try{
                 conn = JDBCUtil.getConnection();
-                // 각각의 영화 정보를 데이터베이스에 저장
-                /*
-                String trunQuery = "truncate table movie_data";
-                pstmt = conn.prepareStatement(trunQuery);
-                pstmt.executeUpdate();
-                */
+  
                 String insertQuery = "INSERT INTO movie_data VALUES (?, ?, ?)";
                 pstmt2 = conn.prepareStatement(insertQuery);
                 pstmt2.setString(1, rank);

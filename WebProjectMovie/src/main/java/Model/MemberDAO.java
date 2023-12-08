@@ -144,11 +144,11 @@ public class MemberDAO {
             while(rs.next()) {
             	 Map<String, String> member = new HashMap<>();
                  member.put("id", rs.getString("id"));
-                 member.put("password", rs.getString("password"));
                  member.put("name", rs.getString("name"));
                  member.put("phone", rs.getString("phone"));
                  member.put("email", rs.getString("email"));
                  member.put("birth", rs.getString("birth"));
+                 member.put("authority", rs.getString("authority"));
 
                  members.add(member);    	
             }
