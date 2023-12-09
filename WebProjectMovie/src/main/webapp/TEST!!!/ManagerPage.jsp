@@ -10,6 +10,7 @@
     List<Map<String, String>> memberList = mDAO.MemberList();
     MovieDAO mvDAO = new MovieDAO();
     List<Map<String, String>> movieList = mvDAO.MovieList();
+    List<Map<String, String>> AllMovie = mvDAO.AllMovie();
 %>
 
 <!DOCTYPE html>
@@ -77,11 +78,40 @@
 				    </tr>
 				    <% } %>
 				</table>
+				<br>
+				<h3>예매내역 불러오기</h3>
+				전체 고객 예매내역 불러오는곳
 			</div>
 			<div id="Administor_div2">
 				<br>
-				<h3>예약목록 전체조회</h3>
-				영화 예약 테이블 넣을곳
+				<h3>영화 불러오기</h3>
+				<br>
+				<form method="get" action="/WebProjectMovie/moviereset.do">
+					<label>테이블 초기화 : </label> <button type="submit" class="btn btn-dark me-2" >실행</button>
+				</form>
+				<form method="get" action="/WebProjectMovie/moviemenu.do">
+					<input type="text" class="inp" style="background:transparent;color:white;" name="count" placeholder="불러올 수 (예 : 20)" size="15">
+					<button type="submit" class="btn btn-dark me-2" >조회</button>
+				</form>
+				<br>
+				<table class="table table-dark w-100" border="1">
+				    <tr>
+				        <th>제목</th>
+				        <th>년도</th>
+				        <th>개봉날짜</th>
+				        <th>장르</th>
+				        <th>국가</th>
+				    </tr>
+				    <% for (Map<String, String> movies : AllMovie) { %>
+				    <tr>
+				         <td><%= movies.get("movieNm") %></td>
+				         <td><%= movies.get("prdtYear") %></td>
+				         <td><%= movies.get("openDt") %></td>
+				         <td><%= movies.get("genreAlt") %></td>
+				         <td><%= movies.get("repNationNm") %></td>
+				    </tr>
+				    <% } %>
+				</table>
 			</div>
 		</div>
 		<%@ include file="../layout/footer.jsp" %>
@@ -101,13 +131,14 @@
 			}
 			#main {
 				display: flex;
-				margin-left: 6%;
+				margin-left: 3%;
 			}
 			#Administor_div1 {
 				width: 50%;
 			}
 			#Administor_div2 {
-				margin-left: 6%;
+				margin-left: 3%;
+				margin-right: 3%;
 				width: 50%;
 			}
 			.inp {

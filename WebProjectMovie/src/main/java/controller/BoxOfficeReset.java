@@ -23,7 +23,7 @@ public class BoxOfficeReset extends HttpServlet {
 	        
 	        try {
 	        	conn = JDBCUtil.getConnection();
-	            String strQuery = "truncate table movie_data";
+	            String strQuery = "truncate table BoxOffice";
 	            pstmt = conn.prepareStatement(strQuery);
 	            pstmt.executeUpdate();
 	            
