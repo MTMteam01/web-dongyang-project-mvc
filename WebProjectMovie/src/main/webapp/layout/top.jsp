@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
 <h1 class="title"> MTM </h1>
@@ -16,8 +18,7 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/WebProjectMovie/home/index.jsp" class="nav-link px-2 link-secondary text-reset">Home</a></li>
-        <li><a href="../movieForm.jsp" class="nav-link px-2 link-dark text-reset">Movie</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark text-reset">OST</a></li>
+        <li><a href="/WebProjectMovie/movie/movieForm.jsp" class="nav-link px-2 link-dark text-reset">Movie</a></li>
         <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
         <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark text-reset">MY PAGE</a></li>
         <li><a href="#" class="nav-link px-2 link-dark text-reset">HELP</a></li>
@@ -31,6 +32,9 @@
   >
 </body>
 <style>
+html {
+background-color: black !important;
+}
 	.container {
 	color: #95a5a6 !important;
 	}
