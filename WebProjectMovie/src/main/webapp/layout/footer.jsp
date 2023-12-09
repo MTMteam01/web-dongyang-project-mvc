@@ -3,13 +3,7 @@
 <body>
 	<div class="container">
 	<footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted text-reset">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted text-reset">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted text-reset">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted text-reset">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted text-reset">About</a></li>
-    </ul>
+	<br>
     <p class="text-left text-muted text-reset">Copyright © 2023 MTMCompany, Inc</p>
     <p class="text-left text-muted text-reset">인천광역시 서구 청라루비로 76 스퀘어 3층 (청라동 155-7)</p>
 	<p class="text-left text-muted text-reset">

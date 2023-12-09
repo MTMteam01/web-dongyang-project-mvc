@@ -144,9 +144,11 @@
         </c:if>
     </main>
 
+
   </body>
   <%@ include file="../layout/footer.jsp" %>
-  </body>
+
+
   <style>
       /* 제목 스타일 설정 */
     .title {

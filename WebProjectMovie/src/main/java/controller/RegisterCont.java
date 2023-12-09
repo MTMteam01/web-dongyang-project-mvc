@@ -41,7 +41,10 @@ public class RegisterCont extends HttpServlet {
 		if(insertCheck){ //제대로 DB에 쿼리 전송이 되었는지 아닌지
 			HttpSession session = request.getSession();
 			session.setAttribute("memID", id); //로그인 후 session id 표시할때 사용
+
 			RequestDispatcher dispatcher = request.getRequestDispatcher("./home/index.jsp");
+
+
 			dispatcher.forward(request, response);
 		}else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/register/RegisterPage.jsp");

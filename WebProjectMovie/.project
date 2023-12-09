@@ -28,41 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/main/webapp/assets/coco.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Users/kminj/Desktop/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98/coco.jpg</locationURI>
-		</link>
-		<link>
-			<name>src/main/webapp/assets/elemental.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Users/kminj/Desktop/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98/elemental.jpg</locationURI>
-		</link>
-		<link>
-			<name>src/main/webapp/assets/moana.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Users/kminj/Desktop/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98/moana.jpg</locationURI>
-		</link>
-		<link>
-			<name>src/main/webapp/assets/spider.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Users/kminj/Desktop/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98/spider.jpg</locationURI>
-		</link>
-		<link>
-			<name>src/main/webapp/assets/up.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Users/kminj/Desktop/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98/up.jpg</locationURI>
-		</link>
-		<link>
-			<name>src/main/webapp/assets/yourName.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Users/kminj/Desktop/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98/yourName.jpg</locationURI>
-		</link>
-		<link>
-			<name>src/main/webapp/assets/zootopia.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Users/kminj/Desktop/%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98/zootopia.jpg</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

@@ -1,4 +1,4 @@
-package Model;
+package test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,10 +9,10 @@ import java.util.List;
 
 import common.JDBCUtil;
 
-public class ReservationManager {
+public class ReserveDAO {
     public static void reserveSeat(String seat, String movieId) {
         try (Connection connection = JDBCUtil.getConnection()) {
-            String sql = "INSERT INTO reservations (seat, movie_id) VALUES (?, ?)";
+            String sql = "INSERT INTO reserved_seats (seat, movie_id) VALUES (?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, seat);
                 statement.setString(2, movieId);
@@ -25,7 +25,7 @@ public class ReservationManager {
 
     public static boolean isSeatReserved(String seat) {
         try (Connection connection = JDBCUtil.getConnection()) {
-            String sql = "SELECT * FROM reservations WHERE seat = ?";
+            String sql = "SELECT * FROM reserved_seats WHERE seat = ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, seat);
                 try (ResultSet resultSet = statement.executeQuery()) {
@@ -41,7 +41,7 @@ public class ReservationManager {
     public static List<String> getReservedSeats() {
         List<String> reservedSeats = new ArrayList<>();
         try (Connection connection = JDBCUtil.getConnection()) {
-            String sql = "SELECT seat FROM reservations";
+            String sql = "SELECT seat FROM reserved_seats";
             try (PreparedStatement statement = connection.prepareStatement(sql);
                  ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
