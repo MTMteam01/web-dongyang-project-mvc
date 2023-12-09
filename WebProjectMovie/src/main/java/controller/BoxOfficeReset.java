@@ -27,8 +27,7 @@ public class BoxOfficeReset extends HttpServlet {
 	            pstmt = conn.prepareStatement(strQuery);
 	            pstmt.executeUpdate();
 	            
-	            RequestDispatcher dispatcher = request.getRequestDispatcher("TEST!!!/ManagerPage.jsp"); 
-	            dispatcher.forward(request, response);
+	            response.sendRedirect("TEST!!!/ManagerPage.jsp");
 
 	        } catch (Exception ex) {
 	            System.out.println("Exception" + ex);

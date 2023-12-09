@@ -25,13 +25,11 @@ public class ManagerCont extends HttpServlet {
 		boolean Result = memberDAO.userDelete(mDto);
 
         if (Result) {
-        	RequestDispatcher dispatcher = request.getRequestDispatcher("TEST!!!/ManagerPage.jsp"); // 로그인 실패 시 이동할 페이지
+        	response.sendRedirect("TEST!!!/ManagerPage.jsp");
         	System.out.println("성공");
-            dispatcher.forward(request, response);
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("TEST!!!/ManagerPage.jsp");
+        	response.sendRedirect("TEST!!!/ManagerPage.jsp");
             System.out.println("실패");// 로그인 실패 시 이동할 페이지
-            dispatcher.forward(request, response);
         }
 	}
 
