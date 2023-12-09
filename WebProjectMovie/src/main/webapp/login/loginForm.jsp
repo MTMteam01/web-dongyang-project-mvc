@@ -136,8 +136,8 @@
             아이디 저장
           </label>
         </div>
-        <input type="submit" class="btn btn-primary w-100 py-2" value="로그인">
-        <p class="mt-5 mb-3 text-body-secondary text-reset">&copy; 2023</p>
+        <input type="submit" class="btn btn-primary w-100 py-2" style="background:transparent;border-color:#95a5a6;color:#95a5a6;" value="로그인">
+        
       </form>
         <c:if test="${not empty errorMessage}">
         <p>${errorMessage}</p>

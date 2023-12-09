@@ -20,7 +20,7 @@
 %>
 
 <div class="container mt-5">
-    <h1>영화 예매</h1>
+    <h1 style="color: #68c1a6">영화 예매</h1>
     <form action="/WebProjectMovie/ReservationServlet" method="post">
         <!-- 영화 선택 -->
         <div class="mb-3">

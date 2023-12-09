@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="org.apache.catalina.User"%>
 <%@page import="test.ReserveDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,16 +16,11 @@
 <body>
 
 <%@ include file="../layout/top.jsp" %>
-<%
-    char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-%>
-
 
 <div class="container mt-5">
     <h1>영화 예매</h1>
 
     <!-- 예매 양식 -->
-cc
 </div>
 <div id="selectedSeatsInfo" style="display: none;"></div>
 <!-- Modal -->

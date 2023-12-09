@@ -64,7 +64,7 @@
 		body {
             background-color: black;
             font-family: Arial, sans-serif;
-            color: #95a5a6 !important;
+            color: c !important;
         }
         .bo {
             text-align: center;

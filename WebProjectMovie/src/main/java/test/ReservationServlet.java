@@ -21,13 +21,13 @@ public class ReservationServlet extends HttpServlet {
         ReserveDAO reserveDAO = new ReserveDAO();
 
         // Check if the seat is available
-        List<String> reservedSeats = reserveDAO.getReservedSeats(movieId, theaterId, date);
+        List<String> reservedSeats = reserveDAO.getReservedSeats( theaterId,movieId, theaterId, date);
         if (reservedSeats.contains(seat)) {
             // Seat is already reserved, handle accordingly (e.g., show an error message)
             response.getWriter().println("Seat is already reserved.");
         } else {
             // Save the reservation
-            reserveDAO.saveReservation(movieId, theaterId, date, seat);
+            reserveDAO.saveReservation(theaterId, movieId, theaterId, date, seat);
             response.getWriter().println("Reservation successful!");
         }
     }
