@@ -15,10 +15,26 @@ import javax.servlet.http.HttpSession;
 public class LogoutCont extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.invalidate(); // 세션 무효화
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
 
-        response.sendRedirect("login/loginForm.jsp"); // 로그아웃 후 이동할 페이지
+    private void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+
+        if (session != null) {
+            // 세션 무효화
+            session.invalidate();
+        }
+
+        // 로그인 페이지로 리다이렉트
+        response.sendRedirect("/WebProjectMovie/login/loginForm.jsp");
     }
 }
