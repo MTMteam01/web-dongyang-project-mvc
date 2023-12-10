@@ -21,7 +21,7 @@ public class ReservationServlet extends HttpServlet {
 
         // 사용자 ID가 없으면 로그인 페이지로 리다이렉트
         if (userId == null) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("loginForm.jsp");
             return;
         }
 
