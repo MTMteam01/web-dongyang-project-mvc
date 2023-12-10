@@ -3,7 +3,6 @@
 <html>
   <head>
   <title>로그인</title>
-  <link rel="stylesheet" href="login.css">
   <title>로그인 템플릿</title>
 
   </head>
@@ -39,4 +38,43 @@
 
   </body>
   <%@ include file="../layout/footer.jsp" %>
+  <style>
+        
+    .lg {
+		background-color: black !important;
+	}
+    .title {
+        text-align: center;
+        color: rgb(162, 220, 209);
+        font-family: 'Georgia', sans-serif;
+        
+    }
+	form{
+		text-align: center;
+        color: rgb(162, 220, 209);
+	}
+	.info_check {
+    margin-top:20px;
+    overflow:auto;
+    white-space:nowrap;
+    overflow-y:scroll;
+    width:530px; height:150px;
+    border:1px solid rgb(117,117,117);  
+    font-size:14px;
+	}
+	.inp {
+    border:0;
+    border-bottom:2px solid rgb(204,255,204);
+    width:200px;
+    height:30px;
+	}
+    .nav-link,
+    .text-muted {
+    color: #95a5a6 !important; /* Mint color */
+    }
+		
+    .nav-link:hover {
+    color: #68c1a6 !important; /* Darker mint color when hovering */
+    }
+  </style>
 </html>
