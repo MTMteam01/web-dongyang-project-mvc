@@ -1,4 +1,6 @@
 <%@page import="test.ReserveDAO"%>
+<%@ page import="java.util.List"%>
+<%@ page import="test.ReserveDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,15 +19,16 @@
 <%@ include file="../layout/top.jsp" %>
 <%
     char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+
 %>
 
 <div class="container mt-5">
-    <h1 style="color: #68c1a6">영화 예매</h1>
+    <h2 style="color: #A2DCD1">영화 예매</h2><br>
     <form action="/WebProjectMovie/ReservationServlet" method="post">
         <!-- 영화 선택 -->
         <div class="mb-3">
-            <label for="movieSelect" class="form-label">영화 선택</label>
-            <select class="form-select" id="movieSelect" name="movieId" required onchange="selectedMovie = this.options[this.selectedIndex].text;">
+            <label for="movieSelect" class="form-label" style="color:#68c1a6">영화 선택</label>
+            <select class="form-select" id="movieSelect" name="movieId" style="background-color:black;color:#95a5a6;" required onchange="selectedMovie = this.options[this.selectedIndex].text;">
         		<option selected disabled>영화를 선택하세요</option>
         		<option value="movie1">영화 1</option>
         		<option value="movie2">영화 2</option>
@@ -35,14 +38,14 @@
 
         <!-- 날짜 선택 -->
         <div class="mb-3">
-    		<label for="datePicker" class="form-label">날짜 선택</label>
-    		<input type="date" class="form-control" id="datePicker" name="date" required onchange="selectedDate = this.value;">
+    		<label for="datePicker" class="form-label" style="color:#68c1a6">날짜 선택</label>
+    		<input type="date" class="form-control" style="background-color:black;color:#95a5a6;" id="datePicker" name="date" required onchange="selectedDate = this.value;">
 		</div>
 
         <!-- 극장 선택 -->
         <div class="mb-3">
-    		<label for="theaterSelect" class="form-label">극장 선택</label>
-    		<select class="form-select" id="theaterSelect" name="theaterId" required onchange="selectedTheater = this.options[this.selectedIndex].text;">
+    		<label for="theaterSelect" class="form-label" style="color:#68c1a6">극장 선택</label>
+    		<select class="form-select" style="background-color:black;color:#95a5a6;" id="theaterSelect" name="theaterId" required onchange="selectedTheater = this.options[this.selectedIndex].text;" >
         		<option selected disabled>극장을 선택하세요</option>
         		<option value="theater1">극장 1</option>
         		<option value="theater2">극장 2</option>
@@ -52,7 +55,7 @@
 
         <!-- 좌석 선택 -->
         <div class="mb-3">
-            <label class="form-label">좌석 선택</label>
+            <label class="form-label" style="color:#68c1a6" >좌석 선택</label>
             <h3 style="text-align:center">SCREEN</h3>
             <div class="row row-cols-md-5 g-2" style="color:grey">
                 <% for (int row = 1; row <= 8; row++) { %>
@@ -68,8 +71,6 @@
             </div>
         </div>
 
-        <!-- 예약 정보 전송 -->
-      
     </form>
 </div>
 
@@ -100,7 +101,7 @@
 <!-- "예매 완료" Button centered -->
 
 	<div class="d-flex justify-content-center mt-3">
-    	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal" onclick="completeReservation()">예매 완료</button>
+    	<button type="button" style="background:transparent;color:rgb(162, 220, 209);border-color:rgb(162, 220, 209);'" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal" onclick="completeReservation()">예매 완료</button>
 	</div>
 
 
@@ -167,6 +168,9 @@ function selectSeat(seats) {
     .mint-text {
         color: #68c1a6 !important; /* Mint color */
     }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* 흰색으로 아이콘 색상 변경 */
+}
 </style>
 
 </html>

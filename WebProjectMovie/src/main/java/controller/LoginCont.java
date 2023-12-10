@@ -30,6 +30,7 @@ public class LoginCont extends HttpServlet {
         
         MemberDAO memberDAO = new MemberDAO();
         boolean loginResult = memberDAO.loginCheck(id, password);
+        
 
         if (loginResult) {
             HttpSession session = request.getSession();
