@@ -13,6 +13,8 @@ import common.JDBCUtil;
 
 
 
+import common.JDBCUtil;
+
 public class ReserveDAO {
 
 	 public List<String> getReservedSeats(String userId, String movieId, String theaterId, String date) {
@@ -101,10 +103,11 @@ public class ReserveDAO {
                     }
                 
             
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return userReservations;
+
     }
 }

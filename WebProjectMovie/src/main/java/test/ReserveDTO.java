@@ -1,6 +1,7 @@
 package test;
 
 public class ReserveDTO {
+
     private String movieId;
     private String theaterId;
     private String date;
@@ -47,4 +48,5 @@ public class ReserveDTO {
     public void setSeat(String seat) {
         this.seat = seat;
     }
+
 }

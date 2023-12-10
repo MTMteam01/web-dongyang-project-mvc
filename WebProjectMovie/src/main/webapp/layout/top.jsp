@@ -1,4 +1,4 @@
-+<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,12 +20,38 @@
         <li><a href="/WebProjectMovie/home/index.jsp" class="nav-link px-2 link-secondary text-reset">Home</a></li>
         <li><a href="/WebProjectMovie/movie/movieForm.jsp" class="nav-link px-2 link-dark text-reset">Movie</a></li>
         <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
-        <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark text-reset">MY PAGE</a></li>
         <li><a href="#" class="nav-link px-2 link-dark text-reset">HELP</a></li>
       </ul>
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-dark me-2" onclick="redirectToLoginPage()">로그인</button>
-        <button type="button" class="btn btn-dark" onclick="redirectToRegisterPage()">회원가입</button>
+      
+      <% 
+      String userId = (String)session.getAttribute("id");
+      if(userId != null) { // 로그인한 경우 
+      %>
+
+       <button id="logoutButton" type="button" class="btn btn-dark me-2" onclick="logout()">
+        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+  			<path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+			</svg><br>로그아웃
+		</button>
+		<% } else { %>
+        <button id="loginButton" type="button" class="btn btn-dark me-2" onclick="redirectToLoginPage()">
+        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+  			<path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+			</svg><br>로그인
+		</button>
+        <button id="registerButton" type="button" class="btn btn-dark" onclick="redirectToRegisterPage()">
+        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+  			<path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+  			<path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+			</svg><br>회원가입
+		</button>
+		<% } %>	
+        <button type="button" class="btn btn-dark" onclick="redirectToMyPage()">
+        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  			<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+			</svg><br>MY PAGE
+		</button>
       </div>
     </header>
   </div
@@ -54,6 +80,13 @@ background-color: black !important;
         function redirectToRegisterPage() {
             // Replace 'login.jsp' with the actual URL of the login page
             window.location.href = '/WebProjectMovie/register/RegisterPage.jsp';
+        }
+        function redirectToMyPage() {
+            // Replace 'login.jsp' with the actual URL of the login page
+            window.location.href = '/WebProjectMovie/myPage/myPageForm.jsp';
+        }
+        function logout() {
+            window.location.href = '/WebProjectMovie/Logout.do';
         }
     </script>
 </html>

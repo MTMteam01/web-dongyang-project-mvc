@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <title>로그인 템플릿 · Bootstrap v5.3</title>
+  <title>로그인</title>
+  <title>로그인 템플릿</title>
 
   </head>
+  <body class="lg">
   <%@ include file="../../layout/top.jsp" %>
   <div class="joinForm">
     
@@ -36,22 +36,19 @@
         </c:if>
 </div>
 
-
   </body>
   <%@ include file="../layout/footer.jsp" %>
-
-
   <style>
-      /* 제목 스타일 설정 */
+        
+    .lg {
+		background-color: black !important;
+	}
     .title {
         text-align: center;
         color: rgb(162, 220, 209);
         font-family: 'Georgia', sans-serif;
         
     }
-   	body{
-		background-color:black;
-	}
 	form{
 		text-align: center;
         color: rgb(162, 220, 209);
@@ -79,6 +76,5 @@
     .nav-link:hover {
     color: #68c1a6 !important; /* Darker mint color when hovering */
     }
-
-    </style>
+  </style>
 </html>
