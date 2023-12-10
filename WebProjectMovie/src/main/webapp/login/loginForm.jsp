@@ -4,6 +4,8 @@
   <head>
   <title>로그인</title>
   <link rel="stylesheet" href="login.css">
+  <title>로그인 템플릿</title>
+
   </head>
   <body class="lg">
   <%@ include file="../../layout/top.jsp" %>
@@ -34,6 +36,7 @@
         <p>${errorMessage}</p>
         </c:if>
 </div>
+
   </body>
   <%@ include file="../layout/footer.jsp" %>
 </html>
