@@ -42,8 +42,8 @@ public class MovieInfCont extends HttpServlet {
 				String rank = (String) dailyBoxOffice.get("rank");
 				String movieNm = (String) dailyBoxOffice.get("movieNm");
 				String openDt = (String) dailyBoxOffice.get("openDt");
-				
-				saveToDatabase(rank, movieNm, openDt);
+				String audiCnt = (String) dailyBoxOffice.get("audiCnt");
+				saveToDatabase(rank, movieNm, openDt, audiCnt);
 		    }
 		    response.sendRedirect("TEST!!!/ManagerPage.jsp");
 			
@@ -73,8 +73,8 @@ public class MovieInfCont extends HttpServlet {
         return response.toString();
     }
 
-    private void saveToDatabase(String rank, String movieNm, String openDt) {
-    		System.out.println("순위: " + rank + ", 영화제목: " + movieNm + ", 개봉: " + openDt);
+    private void saveToDatabase(String rank, String movieNm, String openDt, String audiCnt) {
+    		System.out.println("순위: " + rank + ", 영화제목: " + movieNm + ", 개봉: " + openDt + ", 관객수: " + audiCnt);
             Connection conn = null;
             PreparedStatement pstmt = null;
             PreparedStatement pstmt2 = null;
@@ -83,11 +83,12 @@ public class MovieInfCont extends HttpServlet {
             try{
                 conn = JDBCUtil.getConnection();
   
-                String insertQuery = "INSERT INTO BoxOffice VALUES (?, ?, ?)";
+                String insertQuery = "INSERT INTO BoxOffice VALUES (?, ?, ?, ?)";
                 pstmt2 = conn.prepareStatement(insertQuery);
                 pstmt2.setString(1, rank);
                 pstmt2.setString(2, movieNm);
                 pstmt2.setString(3, openDt);
+                pstmt2.setString(4, audiCnt);
                 pstmt2.executeUpdate();
 	        } catch (Exception e) {
 	            e.printStackTrace();

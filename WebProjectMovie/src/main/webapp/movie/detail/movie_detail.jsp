@@ -13,7 +13,7 @@
     String yearParam = request.getParameter("year");
     int year = (yearParam != null && !yearParam.isEmpty()) ? Integer.parseInt(yearParam) : LocalDate.now().getYear();
     // MovieList와 현재 연도를 사용하여 영화 목록 가져오기
-    List<Map<String, String>> movieList = mvDAO.MovieList(year);
+    List<Map<String, String>> movieList = mvDAO.MovieList();
     List<Map<String, String>> AllMovie = mvDAO.AllMovie();
 
 %>
