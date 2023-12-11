@@ -1,0 +1,47 @@
+@charset "UTF-8";
+#movieform {
+	background-color: black !important;
+}
+		body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: #95a5a6 !important;
+        }
+		h1 {
+			color: grey;
+		}
+        .nav-link,
+        .text-muted {
+            color: #95a5a6 !important; /* Mint color */
+        }
+		
+        .nav-link:hover {
+            color: #68c1a6 !important; /* Darker mint color when hovering */
+        }
+#movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.movie_h1 {
+	text-align: center;
+}

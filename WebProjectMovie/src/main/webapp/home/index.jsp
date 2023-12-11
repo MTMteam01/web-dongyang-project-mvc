@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Insert title here</title>
     <link rel="stylesheet" href="index.css">
@@ -12,10 +13,7 @@
 </head>
 <body class="bdstyle">
 
-<%@ include file="../layout/top.jsp" %>
-
-<body>
-    
+<%@ include file="../layout/top.jsp" %>    
     
     
 	<div class="movie-container">
@@ -26,6 +24,7 @@
             <img src="../assets/seoulSpring.jpg" alt="서울의 봄 찬란한 순간" style="object-fit: cover; height: 315px; width: 560px;">
         </div>
     </div>
+
 
     <!-- Movie 2 -->
     <div class="movie-container">
@@ -75,14 +74,17 @@
 
 </body>
 <style>
-	.iframe{
-	position:center;
-	}
-	.movie-container {
+		.bdstyle {
+			background-color: black !important;
+		}
+		.iframe{
+			position:center;
+		}
+		.movie-container {
             display: flex;
             margin: 20px;
         }
-	.image-container img {
+		.image-container img {
             object-fit: cover;
             height: 250px; /* Adjust the height as needed */
             width: 450px; /* Adjust the width as needed */
@@ -95,6 +97,35 @@
         table {
             margin: 20px;
         }
+        h1 {
+			color: grey;
+		}
+        .nav-link,
+        .text-muted {
+            color: #95a5a6 !important; /* Mint color */
+        }
+		
+        .nav-link:hover {
+            color: #68c1a6 !important; /* Darker mint color when hovering */
+        }
+        .mv{
+        	text-align: center;
+        }
+        .slideshow-container {
+   			 max-width: 800px;
+    		position: relative;
+   			 margin: auto;
+		}
+
+		.mySlides {
+   	 		display: none;
+		}
+
+/* Optional: You can add some styles for the video titles if needed */
+		.mySlides h3 {
+    		color: white;
+    		text-align: center;
+		}
 	
 
 </style>

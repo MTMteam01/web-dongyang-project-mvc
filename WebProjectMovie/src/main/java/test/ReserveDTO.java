@@ -8,6 +8,7 @@ public class ReserveDTO {
     private String seat;
 
     // Add constructors, getters, and setters
+
     public ReserveDTO(String movieId, String theaterId, String date, String seat) {
         this.movieId = movieId;
         this.theaterId = theaterId;
