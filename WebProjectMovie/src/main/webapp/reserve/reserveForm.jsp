@@ -104,41 +104,7 @@
     	<button type="button" style="background:transparent;color:rgb(162, 220, 209);border-color:rgb(162, 220, 209);'" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservationModal" onclick="completeReservation()">예매 완료</button>
 	</div>
 
-
-<script>
-let selectedSeats = [];
-let selectedMovie = '';
-let selectedTheater = '';
-let selectedDate = '';
-
-function openSeatModal(seat) {
-    if (!selectedSeats.includes(seat)) {
-        selectedSeats.push(seat);
-        updateSelectedSeats();
-    }
-}
-
-function updateSelectedSeats() {
-    const selectedSeatsInfo = document.getElementById('selectedSeatsInfo');
-    selectedSeatsInfo.style.display = 'block';
-    selectedSeatsInfo.innerHTML = '선택한 좌석: ' + selectedSeats.join(', ');
-}
-
-function completeReservation() {
-    const reservationInfo = document.getElementById('reservationInfo');
-    reservationInfo.innerHTML = '예약 완료되었습니다. <br>영화: ' + selectedMovie + '<br>극장: ' + selectedTheater + '<br>날짜: ' + selectedDate + '<br>선택한 좌석: ' + selectedSeats.join(', ');
-    selectedSeats = [];
-    updateSelectedSeats();
-}
-
-function selectSeat(seats) {
-    if (!selectedSeats.includes(seats)) {
-        selectedSeats.push(seats);
-        updateSelectedSeats();
-    }
-}
-</script>
-
+<script type="text/javascript"><%@include file="reserveScript.js" %></script>
 <%@ include file="../layout/footer.jsp" %>
 </body>
 <style>

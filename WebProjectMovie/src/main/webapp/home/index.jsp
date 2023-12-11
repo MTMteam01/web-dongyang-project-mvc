@@ -1,64 +1,101 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="index.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="./home/indexScript.js"></script>
+    
 </head>
 <body class="bdstyle">
 
-
 <%@ include file="../layout/top.jsp" %>
 
-<div id = "Box_Office">
-	<%String memid = (String)session.getAttribute("id"); %>
-	<%= memid %> 님 환영합니다
-	<h1 class="bo" style="background-color:black;">
-	박스 오피스
-	</h1>
-	<img src="https://img.megabox.co.kr/SharedImg/2023/11/22/aM1zeiVGySigNObspcjcoH9NaebEPa2f_420.jpg" alt="서울의 봄" class="poster" onerror="noImg(this, 'main');">
-	<img src="https://img.megabox.co.kr/SharedImg/2023/11/14/gOM47v1Z75W0lzLSPT06Jd3khuBe6Xti_420.jpg" alt="싱글 인 서울" class="poster" onerror="noImg(this, 'main');">
-	<img src="https://img.megabox.co.kr/SharedImg/2023/11/07/iyRP9bUIgcFPr0piup9QzQJoFoH1ZVpM_420.jpg" alt="괴물" class="poster" onerror="noImg(this, 'main');">
-	<img src="https://img.megabox.co.kr/SharedImg/2023/11/15/OM0860oG9r27Dz8NvMXxZJqydpkEwMdK_420.jpg" alt="나폴레옹" class="poster" onerror="noImg(this, 'main');">
-</div>
-<br>
-<hr>
-<div id = "Description">
-	<div id ="test1">
-		<img src="https://img.megabox.co.kr/SharedImg/2023/11/15/OM0860oG9r27Dz8NvMXxZJqydpkEwMdK_420.jpg" alt="나폴레옹" onerror="noImg(this, 'main');">
-	</div>
-	<div id ="test2">
-		스스로 황제가 된 영웅! 인가?
-		<br><br>
-		1793년 혁명의 불꽃이 프랑스 전역을 밝히기 시작한다. 코르시카 출신의 장교 '나폴레옹'(호아킨 피닉스)은
-		<br>
-		혼란스러운 상황 속 국가를 위해 맞서며 영웅으로 떠오른다.
-		<br><br>
-		한편, 사교 파티에서 영웅 ‘나폴레옹’을 만난 '조제핀'(바네사 커비)은 자신의 운명을 바꾸기 위해 ‘나폴레옹’을 선택하고
-		<br>
-		‘나폴레옹’은 마침내 스스로 황제의 자리에 오르게 된다.
-		<br><br>
-		하지만, ‘조제핀’은 계속해서 ‘나폴레옹’을 흔들고, ‘나폴레옹’의 야망은 ‘조제핀’과 끝없이 충돌하는데…
-		<br><br>
-		세상을 정복한 영웅 아무것도 갖지 못한 황제,
-		<br>
-		‘나폴레옹’의 대서사가 펼쳐진다!
-	</div>
-	
-</div>
-<br><br>
-<div class="mv">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-AZ7cnwn2YI?si=0HB-PHYurNBvq7z4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UxrRXOPDkR4?si=QHIpVR74UFRt12X-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<body>
+    
+    
+    
+	<div class="movie-container">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-AZ7cnwn2YI?si=JcHN1kdYTJZ1FV5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="image-container">
+            <img src="../assets/seoulSpring.jpg" alt="서울의 봄 찬란한 순간" style="object-fit: cover; height: 315px; width: 560px;">
+        </div>
+    </div>
 
-</div>
-
+    <!-- Movie 2 -->
+    <div class="movie-container">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RcT1oif6j5k?si=oFDKo4oexgedVolG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="image-container">
+            <img src="../assets/poster.png" alt="다른 영화 포스터" style="object-fit: cover; height: 315px; width: 560px;">
+        </div>
+    </div>
+    
+    
+    
+             <!-- 테이블 형태의 공지사항 작성 -->
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="mobile" style="width:55px; text-align:center;">번호</th>
+                  <th style="text-align:center;">제목</th>
+                  <th class="mobile" style="width:80px; text-align:center;">작성자</th>
+                  <th class="mobile" style="width:120px; text-align:center;">날짜</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <!-- 글의 순서에 따라 번호를 붙이는 게시물 형식 만들기 -->
+                  <td style="text-align: center;">3</td>
+                  <td>신규 영화 시사회 참여자를 모집합니다.</td>
+                  <td style"text-align: center;">운영자</td>
+                  <td style="text-align: center;">2018-05-05</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">2</td>
+                  <td>영화 예매 웹 사이트에 오신 것을 환영합니다.</td>
+                  <td style="text-align: center;">운영자</td>
+                  <td style="text-align: center;">2018-05-04</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">1</td>
+                  <td>영화 예매 웹 사이트가 개설되었습니다.</td>
+                  <td style="text-align: center;">운영자</td>
+                  <td style="text-align: center;">2018-05-03</td>
+                </tr>
+              </tbody>
+            </table>
 <%@ include file="../layout/footer.jsp" %>
 
-
 </body>
+<style>
+	.iframe{
+	position:center;
+	}
+	.movie-container {
+            display: flex;
+            margin: 20px;
+        }
+	.image-container img {
+            object-fit: cover;
+            height: 250px; /* Adjust the height as needed */
+            width: 450px; /* Adjust the width as needed */
+        }
+        .image-container {
+            order: -1; /* Change the order to -1 for odd movie containers */
+        }
+        
+
+        table {
+            margin: 20px;
+        }
+	
+
+</style>
 </html>

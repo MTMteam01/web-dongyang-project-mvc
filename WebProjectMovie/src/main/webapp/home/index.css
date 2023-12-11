@@ -35,3 +35,18 @@
         .mv{
         	text-align: center;
         }
+        .slideshow-container {
+   			 max-width: 800px;
+    		position: relative;
+   			 margin: auto;
+		}
+
+		.mySlides {
+   	 		display: none;
+		}
+
+/* Optional: You can add some styles for the video titles if needed */
+		.mySlides h3 {
+    		color: white;
+    		text-align: center;
+		}

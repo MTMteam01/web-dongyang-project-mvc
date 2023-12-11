@@ -17,7 +17,7 @@ import common.JDBCUtil;
 
 public class ReserveDAO {
 
-	 public List<String> getReservedSeats(String userId, String movieId, String theaterId, String date) {
+	 public List<String> getReservedSeats(String id, String movieId, String theaterId, String date) {
     	Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -25,11 +25,11 @@ public class ReserveDAO {
         
         try {
 			conn = JDBCUtil.getConnection();
-			String sql = "SELECT seat FROM reservations WHERE user_id = ? AND movie_id = ? AND theater_id = ? AND date = ?";
+			String sql = "SELECT seat FROM reservations WHERE id = ? AND movie_id = ? AND theater_id = ? AND date = ?";
 			PreparedStatement statement = conn.prepareStatement(sql);
 					
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, userId);
+            pstmt.setString(1, id);
             pstmt.setString(2, movieId);
             pstmt.setString(3, theaterId);
             pstmt.setString(4, date);
@@ -48,7 +48,7 @@ public class ReserveDAO {
     return reservedSeats;
 }
 
-    public void saveReservation(String userId, String movieId, String theaterId, String date, String seat) {
+    public void saveReservation(String id, String movieId, String theaterId, String date, String seat) {
     	Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -56,20 +56,29 @@ public class ReserveDAO {
         
         try {
         	conn = JDBCUtil.getConnection();
-        	String sql = "INSERT INTO reservations (user_id, movie_id, theater_id, date, seat) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO reservations (id, movie_id, theater_id, date, seat, user_id) VALUES (?, ?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, userId);
+            pstmt.setString(1, id);
             pstmt.setString(2, movieId);
             pstmt.setString(3, theaterId);
             pstmt.setString(4, date);
             pstmt.setString(5, seat);
+            pstmt.setString(6, id); 
   
             
             int count = pstmt.executeUpdate();
+            if (count > 0) {
+                System.out.println("Reservation saved successfully!");
+            } else {
+                System.out.println("Failed to save reservation.");
+            }
 
-        }
-     catch (SQLException e) {
-        e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(pstmt, conn);
+
+      
     	}
 	}
 
@@ -87,7 +96,7 @@ public class ReserveDAO {
         try {
         		conn = JDBCUtil.getConnection();
         		
-        		String sql = "SELECT movie_id, theater_id, date, seat FROM reservations WHERE user_id = ?";
+        		String sql = "SELECT movie_id, theater_id, date, seat FROM reservations WHERE id = ?";
                 pstmt = conn.prepareStatement(sql);
         		PreparedStatement statement = conn.prepareStatement(sql);
                 rs = pstmt.executeQuery(sql);

@@ -17,7 +17,7 @@ public class ReservationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 세션에서 사용자 ID 가져오기
         HttpSession session = request.getSession();
-        String userId = (String) session.getAttribute("userId");
+        String userId = (String) session.getAttribute("id");
 
         // 사용자 ID가 없으면 로그인 페이지로 리다이렉트
         if (userId == null) {
