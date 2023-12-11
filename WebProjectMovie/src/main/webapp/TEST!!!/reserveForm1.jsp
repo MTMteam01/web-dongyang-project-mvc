@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="org.apache.catalina.User"%>
+<%@page import="test.ReserveDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,57 +17,65 @@
 
 <%@ include file="../layout/top.jsp" %>
 
-<%
-    char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-%>
-
 <div class="container mt-5">
-    <!-- 영화 선택 -->
-    <div class="mb-4">
-        <h3 class="text-white">영화 선택</h3>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>영화를 선택하세요</option>
-            <option value="movie1">영화 1</option>
-            <option value="movie2">영화 2</option>
-            <option value="movie3">영화 3</option>
-        </select>
-    </div>
+    <h1>영화 예매</h1>
 
-    <!-- 날짜 선택 -->
-    <div class="mb-4">
-        <h3 class="text-white">날짜 선택</h3>
-        <input type="date" class="form-control">
-    </div>
-
-    <!-- 극장 선택 -->
-    <div class="mb-4">
-        <h3 class="text-white">극장 선택</h3>
-        <select class="form-select" id="theaterSelect" aria-label="Default select example">
-            <option selected>극장을 선택하세요</option>
-            <option value="theater1">극장 1</option>
-            <option value="theater2">극장 2</option>
-            <option value="theater3">극장 3</option>
-        </select>
-    </div>
-    <div class="mb-4">
-        <h3 class="text-white">좌석 선택</h3><br>
-        <!-- 여기에 좌석 선택을 위한 내용을 추가 -->
-        <h3 style="text-align:center">SCREEN</h3>
-        <div class="row row-cols-md-5 g-2" style="color:grey">
-            <% for (int row = 1; row <= 8; row++) { %>
-                <% for (int col = 1; col <= 5; col++) { %>
-                    <div class="col">
-                        <button type="button" class="btn btn-outline-dark mb-2 mint-text" onclick="openSeatModal('<%= alphabet[col - 1] + "" + row %>')"><%= alphabet[col - 1] + "" + row %></button>
-                    </div>
-                <% } %>
-            <% } %>
+    <!-- 예매 양식 -->
+</div>
+<div id="selectedSeatsInfo" style="display: none;"></div>
+<!-- Modal -->
+<div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">예약 완료</h5>
+                <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="reservationInfo"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+            </div>
         </div>
     </div>
 </div>
 
+<button type="button" class="btn btn-primary" style="justify-content:center" onclick="completeReservation()" >예매 완료</button>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-r5k4U0tD1NDbozKjHl3PmrC3UppCrYxnq9i2YA6qrqEkN9Nfnzg1Jp6cuBoyJTeU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
+<script>
+let selectedSeats = [];
+
+function openSeatModal(seat) {
+    if (!selectedSeats.includes(seat)) {
+        selectedSeats.push(seat);
+        updateSelectedSeats();
+    }
+    $('#reservationModal').modal('show');
+}
+
+function updateSelectedSeats() {
+    const selectedSeatsInfo = document.getElementById('selectedSeatsInfo');
+    selectedSeatsInfo.style.display = 'block';
+    selectedSeatsInfo.innerHTML = '선택한 좌석: ' + selectedSeats.join(', ');
+}
+
+function completeReservation() {
+    alert('예약 완료되었습니다. 선택한 좌석: ' + selectedSeats.join(', '));
+    selectedSeats = [];
+    updateSelectedSeats();
+}
+
+function selectSeat(seats) {
+    if (!selectedSeats.includes(seats)) {
+        selectedSeats.push(seats);
+        updateSelectedSeats();
+    }
+}
+</script>
 <%@ include file="../layout/footer.jsp" %>
-
 </body>
 <style>
     body {
