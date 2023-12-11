@@ -31,7 +31,7 @@
        <input type="submit" style="background:transparent;color:rgb(162, 220, 209);" value="Sign In">	
         <br><br>
       </form>
-        <c:if test="${not empty errorMessage}">
+        <c:if class="loginerror" test="${not empty errorMessage}">
         <p>${errorMessage}</p>
         </c:if>
 </div>
@@ -42,6 +42,9 @@
         
     .lg {
 		background-color: black !important;
+	}
+	.loginerror {
+		text-align: center;
 	}
     .title {
         text-align: center;
