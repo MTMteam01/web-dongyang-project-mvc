@@ -52,21 +52,20 @@ public class ReserveDAO {
     	Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-
         
         try {
         	conn = JDBCUtil.getConnection();
-            String sql = "INSERT INTO reservations (id, movie_id, theater_id, date, seat, user_id) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO reservations VALUES (?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, id);
             pstmt.setString(2, movieId);
             pstmt.setString(3, theaterId);
             pstmt.setString(4, date);
             pstmt.setString(5, seat);
-            pstmt.setString(6, id); 
   
             
             int count = pstmt.executeUpdate();
+            
             if (count > 0) {
                 System.out.println("Reservation saved successfully!");
             } else {
@@ -81,9 +80,6 @@ public class ReserveDAO {
       
     	}
 	}
-
-        
-    
     
     public List<String> getUserReservations(String userId) {
         List<String> userReservations = new ArrayList<>();
@@ -91,8 +87,6 @@ public class ReserveDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         
-
-
         try {
         		conn = JDBCUtil.getConnection();
         		
@@ -110,13 +104,69 @@ public class ReserveDAO {
                                 ", 좌석: " + rs.getString("seat");
                         userReservations.add(reservationInfo);
                     }
-                
-            
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return userReservations;
 
+    }
+    
+    public List<Map<String, String>> ReserveList() {
+    	List<Map<String, String>> reserves = new ArrayList<>();
+    	Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+        	conn = JDBCUtil.getConnection();
+            String strQuery = "select * from reservations";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(strQuery);
+            
+            while(rs.next()) {
+            	 Map<String, String> reserve = new HashMap<>();
+            	 reserve.put("id", rs.getString("id"));
+            	 reserve.put("movie_id", rs.getString("movie_id"));
+            	 reserve.put("theater_id", rs.getString("theater_id"));
+            	 reserve.put("date", rs.getString("date"));
+            	 reserve.put("seat", rs.getString("seat"));
+
+            	 reserves.add(reserve);    	
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Exception" + ex);
+        } finally {
+        	JDBCUtil.close(rs, stmt, conn);
+        }
+        return reserves;
+    }
+
+    public boolean userDelete(ReserveDTO rDTO) {
+    	Connection conn = null;
+        PreparedStatement pstmt = null;
+        boolean flag = false;
+        
+        try {
+        	conn = JDBCUtil.getConnection();
+            String strQuery = "delete from reservations where id = ? and movie_id = ?";
+            pstmt = conn.prepareStatement(strQuery);
+            pstmt.setString(1, rDTO.getId());
+            pstmt.setString(2, rDTO.getMovieId());
+            System.out.println(pstmt);
+            int count = pstmt.executeUpdate();
+
+            if (count == 1) {
+                flag = true;
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Exception" + ex);
+        } finally {
+        	JDBCUtil.close(pstmt, conn);
+        }
+        
+        return flag;
     }
 }

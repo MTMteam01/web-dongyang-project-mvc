@@ -30,10 +30,10 @@
             <label for="movieSelect" class="form-label" style="color:#68c1a6">영화 선택</label>
             <select class="form-select" id="movieSelect" name="movieId" style="background-color:black;color:#95a5a6;" required onchange="selectedMovie = this.options[this.selectedIndex].text;">
         		<option selected disabled>영화를 선택하세요</option>
-        		<option value="movie1">영화 1</option>
-        		<option value="movie2">영화 2</option>
-        		<option value="movie3">영화 3</option>
-    </select>
+        		<option value="movie1">movie1</option>
+        		<option value="movie2">movie2</option>
+        		<option value="movie3">movie3</option>
+    		</select>
         </div>
 
         <!-- 날짜 선택 -->
@@ -70,7 +70,6 @@
             <% } %>
             </div>
         </div>
-
     </form>
 </div>
 

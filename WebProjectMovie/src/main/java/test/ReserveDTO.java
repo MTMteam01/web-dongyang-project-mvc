@@ -2,22 +2,22 @@ package test;
 
 public class ReserveDTO {
 
+	private String id;
     private String movieId;
     private String theaterId;
     private String date;
     private String seat;
 
-    // Add constructors, getters, and setters
-
-    public ReserveDTO(String movieId, String theaterId, String date, String seat) {
-        this.movieId = movieId;
-        this.theaterId = theaterId;
-        this.date = date;
-        this.seat = seat;
-    }
-
     // Add getters and setters
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     public String getMovieId() {
         return movieId;
     }
