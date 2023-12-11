@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 class="title"> MTM </h1>
-<div class="container">
+<div class="button_menu">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
@@ -20,26 +20,37 @@
         <li><a href="/WebProjectMovie/home/index.jsp" class="nav-link px-2 link-secondary text-reset">Home</a></li>
         <li><a href="/WebProjectMovie/movie/movieForm.jsp" class="nav-link px-2 link-dark text-reset">Movie</a></li>
         <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
-        <li><a href="../TEST!!!/ManagerPage.jsp" class="nav-link px-2 link-dark text-reset">HELP</a></li>
+        <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark text-reset">HELP</a></li>
       </ul>
       <div class="col-md-3 text-end">
       <% 
       String userId = (String)session.getAttribute("id");
       if(userId != null) { // 로그인한 경우 
     	  String memid = (String)session.getAttribute("id");
-      %>
-      <%= memid %> 님 환영합니다.
-       <button id="logoutButton" type="button" class="btn btn-dark me-2" onclick="logout()">
-        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
-  			<path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
-			</svg><br>로그아웃
-		</button>
-		<button type="button" class="btn btn-dark" onclick="redirectToMyPage()">
-        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-  			<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-			</svg><br>MY PAGE
-		</button>
-		<% } else { %>
+      %> <label class="welcome"> <%= memid %> 님 환영합니다. </label> 
+      <% if(userId.equals("root")){ %>
+	       <button id="logoutButton" type="button" class="btn btn-dark me-2" onclick="logout()">
+	        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+	  			<path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+				</svg><br>로그아웃
+			</button>
+			<button type="button" class="btn btn-dark" onclick="redirectToAdministor()">
+	        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+	  			<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+				</svg><br>관리자
+			</button>
+		<%} else { %>
+			<button id="logoutButton" type="button" class="btn btn-dark me-2" onclick="logout()">
+	        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+	  			<path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+				</svg><br>로그아웃
+			</button>
+			<button type="button" class="btn btn-dark" onclick="redirectToMyPage()">
+	        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+	  			<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+				</svg><br>MyPage
+			</button>
+		<% }} else { %>
         <button id="loginButton" type="button" class="btn btn-dark me-2" onclick="redirectToLoginPage()">
         	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
   			<path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
@@ -57,11 +68,14 @@
    </div>
 </body>
 <style>
-html {
-background-color: black !important;
-}
-	.container {
-	color: #95a5a6 !important;
+	html {
+	background-color: black !important;
+	}
+	.welcome{
+		text-algin: left;
+	}
+	.button_menu {
+		color: #95a5a6 !important;
 	}
     /* 제목 스타일 설정 */
     .title {
@@ -83,6 +97,10 @@ background-color: black !important;
         function redirectToMyPage() {
             // Replace 'login.jsp' with the actual URL of the login page
             window.location.href = '/WebProjectMovie/myPage/myPageForm.jsp';
+        }
+        function redirectToAdministor() {
+            // Replace 'login.jsp' with the actual URL of the login page
+            window.location.href = '/WebProjectMovie/TEST!!!/ManagerPage.jsp';
         }
         function logout() {
             window.location.href = '/WebProjectMovie/Logout.do';

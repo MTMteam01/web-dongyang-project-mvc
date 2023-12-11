@@ -14,8 +14,7 @@
 <body class="bdstyle">
 
 <%@ include file="../layout/top.jsp" %>    
-    
-    
+  
 	<div class="movie-container">
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/-AZ7cnwn2YI?si=JcHN1kdYTJZ1FV5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -24,7 +23,6 @@
             <img src="../assets/seoulSpring.jpg" alt="서울의 봄 찬란한 순간" style="object-fit: cover; height: 315px; width: 560px;">
         </div>
     </div>
-
 
     <!-- Movie 2 -->
     <div class="movie-container">
@@ -35,11 +33,8 @@
             <img src="../assets/poster.png" alt="다른 영화 포스터" style="object-fit: cover; height: 315px; width: 560px;">
         </div>
     </div>
-    
-    
-    
              <!-- 테이블 형태의 공지사항 작성 -->
-            <table class="table table-striped">
+            <table class="table table-dark w-75">
               <thead>
                 <tr>
                   <th class="mobile" style="width:55px; text-align:center;">번호</th>
@@ -92,7 +87,6 @@
         .image-container {
             order: -1; /* Change the order to -1 for odd movie containers */
         }
-        
 
         table {
             margin: 20px;
