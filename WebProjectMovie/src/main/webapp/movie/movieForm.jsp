@@ -13,11 +13,12 @@
 <%@ include file="../layout/top.jsp" %>
 
     <header>
-        <h1>전체 영화</h1>
+        <h1 style="text-align: center;">전체 영화</h1>
     </header>
     <section id="movie-list" class="movie-list">
         <!-- Movie list will go here -->
     </section>
 <%@ include file="../layout/footer.jsp" %>
+
 </body>
 </html>
