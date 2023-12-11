@@ -1,16 +1,23 @@
 package test;
 
 public class ReserveDTO {
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa5f31e0d4c0dd3ee98e10f4db1e39bf224f3347
     private String movieId;
     private String theaterId;
     private String date;
     private String seat;
 
     // Add constructors, getters, and setters
+<<<<<<< HEAD
 
     public ReserveDTO() {
     }
 
+=======
+>>>>>>> fa5f31e0d4c0dd3ee98e10f4db1e39bf224f3347
     public ReserveDTO(String movieId, String theaterId, String date, String seat) {
         this.movieId = movieId;
         this.theaterId = theaterId;
@@ -51,4 +58,8 @@ public class ReserveDTO {
     public void setSeat(String seat) {
         this.seat = seat;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa5f31e0d4c0dd3ee98e10f4db1e39bf224f3347
 }
