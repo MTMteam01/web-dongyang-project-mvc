@@ -3,6 +3,7 @@
 
 <%@ page import="Model.MemberDAO" %>
 <%@ page import="Model.MovieDAO" %>
+<%@ page import="test.ReserveDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>    
 <%
@@ -10,7 +11,9 @@
     List<Map<String, String>> memberList = mDAO.MemberList();
     MovieDAO mvDAO = new MovieDAO();
     List<Map<String, String>> movieList = mvDAO.MovieList();
-    List<Map<String, String>> AllMovie = mvDAO.AllMovie();
+    List<Map<String, String>> allMovie = mvDAO.AllMovie();
+    ReserveDAO rDAO = new ReserveDAO();
+    List<Map<String, String>> reserveList = rDAO.ReserveList();
 %>
 
 <!DOCTYPE html>
@@ -80,7 +83,39 @@
 				</table>
 				<br>
 				<h3>예매내역 불러오기</h3>
-				전체 고객 예매내역 불러오는곳
+				<br>
+				<table class="table table-dark w-100" border="1">
+				    <tr>
+				        <th>ID</th>
+				        <th>영화명</th>
+				        <th>극장명</th>
+				        <th>시간</th>
+				        <th>좌석</th>
+				    </tr>
+			    	<% for (Map<String, String> reserves : reserveList) { %>
+			        <tr>
+			            <td><%= reserves.get("id") %></td>
+			            <td><%= reserves.get("movie_id") %></td>
+			            <td><%= reserves.get("theater_id") %></td>
+			            <td><%= reserves.get("date") %></td>
+			            <td><%= reserves.get("seat") %></td>
+			        </tr>
+			    	<% } %>
+				</table>
+	    		<form method="post" action="/WebProjectMovie/reservecancle.do" >
+	    			<input type="text" class="inp" style="background:transparent;color:white;" name="id" placeholder="아이디 입력" size="15">
+	    			<br><br>
+	    			<label for="movieSelect" class="form-label" style="color:#68c1a6">
+	    			영화 선택
+	    			<select class="form-select w-75" id="movieSelect" name="movieId" style="background-color:black;color:#95a5a6;">
+		        		<option selected disabled>영화를 선택하세요</option>
+		        		<option value="movie1">movie1</option>
+		        		<option value="movie2">movie2</option>
+		        		<option value="movie3">movie3</option>
+		    		</select>
+	    			</label>
+		    		<button type="submit" class="btn btn-dark me-2" >삭제</button>
+	    		</form>
 			</div>
 			<div id="Administor_div2">
 				<br>
@@ -102,7 +137,7 @@
 				        <th>장르</th>
 				        <th>국가</th>
 				    </tr>
-				    <% for (Map<String, String> movies : AllMovie) { %>
+				    <% for (Map<String, String> movies : allMovie) { %>
 				    <tr>
 				         <td><%= movies.get("movieNm") %></td>
 				         <td><%= movies.get("prdtYear") %></td>
