@@ -57,16 +57,18 @@
 					<button type="submit" class="btn btn-dark me-2" >탈퇴</button>
 				</form>
 				<br><br>
-				<h3>박스오피스 불러오기</h3>
+				<h3>박스오피스 조회</h3>
 				<br>
-				<form method="get" action="/WebProjectMovie/boxoffice.do">
-					<label>테이블 초기화 : </label> <button type="submit" class="btn btn-dark me-2" >실행</button>
-				</form>
-				<form method="get" action="/WebProjectMovie/movieinfo.do">
-					<input type="text" class="inp" style="background:transparent;color:white;" name="year" placeholder="기준 연도 (예: 20230101)" size="15">
-					<button type="submit" class="btn btn-dark me-2" >조회</button>
-				</form>
-				<br>
+				<!-- 
+					<form method="get" action="/WebProjectMovie/boxoffice.do">
+						<label>테이블 초기화 : </label> <button type="submit" class="btn btn-dark me-2" >실행</button>
+					</form>
+					<form method="get" action="/WebProjectMovie/movieinfo.do">
+						<input type="text" class="inp" style="background:transparent;color:white;" name="year" placeholder="기준 연도 (예: 20230101)" size="15">
+						<button type="submit" class="btn btn-dark me-2" >조회</button>
+					</form>
+					<br>
+				 -->
 				<table class="table table-dark w-100" border="1">
 				    <tr>
 				        <th>랭킹</th>
@@ -125,25 +127,29 @@
 					<label>테이블 초기화 : </label> <button type="submit" class="btn btn-dark me-2" >실행</button>
 				</form>
 				<form method="get" action="/WebProjectMovie/moviemenu.do">
-					<input type="text" class="inp" style="background:transparent;color:white;" name="count" placeholder="불러올 수 (예 : 20)" size="15">
+					<input type="text" class="inp_2" style="background:transparent;color:white;" name="count" placeholder="개수 (예 : 20)">
+					<input type="text" class="inp" style="background:transparent;color:white;" name="releaseDts" placeholder="개봉일 시작 (예 : 20230101)">
+					<input type="text" class="inp" style="background:transparent;color:white;" name="releaseDte" placeholder="개봉일 종료 (예 : 20231201)">
 					<button type="submit" class="btn btn-dark me-2" >조회</button>
 				</form>
 				<br>
 				<table class="table table-dark w-100" border="1">
 				    <tr>
+				        <th>ID</th>
 				        <th>제목</th>
 				        <th>년도</th>
-				        <th>개봉날짜</th>
+				        <th>날짜</th>
 				        <th>장르</th>
 				        <th>국가</th>
 				    </tr>
 				    <% for (Map<String, String> movies : allMovie) { %>
 				    <tr>
-				         <td><%= movies.get("movieNm") %></td>
-				         <td><%= movies.get("prdtYear") %></td>
-				         <td><%= movies.get("openDt") %></td>
-				         <td><%= movies.get("genreAlt") %></td>
-				         <td><%= movies.get("repNationNm") %></td>
+				         <td><%= movies.get("movieId") %></td>
+				         <td><%= movies.get("title") %></td>
+				         <td><%= movies.get("year") %></td>
+				         <td><%= movies.get("date") %></td>
+				         <td><%= movies.get("genre") %></td>
+				         <td><%= movies.get("nation") %></td>
 				    </tr>
 				    <% } %>
 				</table>
@@ -181,7 +187,13 @@
 			    border-bottom:2px solid rgb(204,255,204);
 			    width:200px;
 			    height:30px;
-			}	
+			}
+			.inp_2{
+				border:0;
+			    border-bottom:2px solid rgb(204,255,204);
+			    width:100px;
+			    height:30px;
+			}
 	        .bo {
 	            text-align: center;
 	        }

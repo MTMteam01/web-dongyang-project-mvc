@@ -20,7 +20,7 @@
         <li><a href="/WebProjectMovie/home/index.jsp" class="nav-link px-2 link-secondary text-reset">Home</a></li>
         <li><a href="/WebProjectMovie/movie/movieForm.jsp" class="nav-link px-2 link-dark text-reset">Movie</a></li>
         <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
-        <li><a href="../myPage/myPageForm.jsp" class="nav-link px-2 link-dark text-reset">HELP</a></li>
+        <li><a href="../home/moviefaq.jsp" class="nav-link px-2 link-dark text-reset">HELP</a></li>
       </ul>
       <div class="col-md-3 text-end">
       <% 
