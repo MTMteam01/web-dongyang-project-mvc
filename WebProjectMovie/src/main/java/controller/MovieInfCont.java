@@ -27,7 +27,7 @@ public class MovieInfCont extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
     	//String year = request.getParameter("year");
-        String apiUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&itemPerPage=10&targetDt=20231201";
+        String apiUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&itemPerPage=10&targetDt=20231212";
         System.out.println(getJsonData(apiUrl));
         String jsonData = getJsonData(apiUrl);
         JSONParser parser = new JSONParser();
@@ -42,8 +42,9 @@ public class MovieInfCont extends HttpServlet {
 				String rank = (String) dailyBoxOffice.get("rank");
 				String movieNm = (String) dailyBoxOffice.get("movieNm");
 				String openDt = (String) dailyBoxOffice.get("openDt");
+				String audiAcc = (String) dailyBoxOffice.get("audiAcc");
 				
-				saveToDatabase(rank, movieNm, openDt);
+				saveToDatabase(rank, movieNm, openDt, audiAcc);
 		    }
 		    response.sendRedirect("TEST!!!/ManagerPage.jsp");
 			
@@ -72,8 +73,8 @@ public class MovieInfCont extends HttpServlet {
         return response.toString();
     }
 
-    private void saveToDatabase(String rank, String movieNm, String openDt) {
-    		System.out.println("순위: " + rank + ", 영화제목: " + movieNm + ", 개봉: " + openDt);
+    private void saveToDatabase(String rank, String movieNm, String openDt, String audiAcc) {
+
             Connection conn = null;
             PreparedStatement pstmt = null;
             PreparedStatement pstmt2 = null;
@@ -82,11 +83,12 @@ public class MovieInfCont extends HttpServlet {
             try{
                 conn = JDBCUtil.getConnection();
   
-                String insertQuery = "INSERT INTO BoxOffice VALUES (?, ?, ?)";
+                String insertQuery = "INSERT INTO BoxOffice VALUES (?, ?, ?, ?)";
                 pstmt2 = conn.prepareStatement(insertQuery);
                 pstmt2.setString(1, rank);
                 pstmt2.setString(2, movieNm);
                 pstmt2.setString(3, openDt);
+                pstmt2.setString(4, audiAcc);
                 pstmt2.executeUpdate();
 	        } catch (Exception e) {
 	            e.printStackTrace();
