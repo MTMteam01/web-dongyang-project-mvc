@@ -1,3 +1,5 @@
+
+   document.addEventListener("DOMContentLoaded", function () {
     var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
@@ -13,4 +15,21 @@
       pagination: {
         el: ".swiper-pagination",
       },
+      initialSlide: middleSlideIndex,
+    });
+    swiper.on('slideChange', function () {
+        updateMovieDetails();
+    });
+    
+    function updateMovieDetails() {
+        var activeSlide = swiper.slides[swiper.activeIndex];
+        var title = $(activeSlide).data("title");
+        var director = $(activeSlide).data("director");
+        var date = $(activeSlide).data("date");
+
+        $("#movieTitle").text(title);
+        $("#movieDirector").text("Director: " + director);
+        $("#movieDate").text("Release Date: " + date);
+    }
+    updateMovieDetails();
     });

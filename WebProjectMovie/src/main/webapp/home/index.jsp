@@ -13,10 +13,10 @@
 <body class="bdstyle">
 
 <%@ include file="../layout/top.jsp" %>    
+
     
 <head>
-  <meta charset="utf-8" />
-  <title>Main Page</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -41,70 +41,81 @@
       width: 100%;
       padding-top: 50px;
       padding-bottom: 50px;
+      position: relative;
     }
 
     .swiper-slide {
       background-position: center;
       background-size: cover;
       width: 300px;
-      height: 400px;
+      height: 800px;
     }
 
     .swiper-slide img {
       display: block;
       width: 100%;
     }
+    .modal-content {
+            background-color: #1a1a1a;
+            color: white;
+     }
+     h4{
+     	text-align:center;
+     	color:#95a5a6;
+     }
+     
+
   </style>
 </head>
 
 <body>
-
+<br>
+	<h3 style="color:#99CCCC;text-align:center;">천만 관객 영화</h3>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
+      <div class="swiper-slide" >
+         <h4>침묵</h4>
+         <div  style="backgroud-color:#95a5a6;width:292;height:432">text</div>
         <img src="../assets/poster01.jpg" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qBX-20EaEq8?si=eOCkWSJRjBt4htBC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="swiper-slide">
+        <h4>신세계</h4>
         <img src="../assets/poster02.jpg" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/rvLMVcRkRfY?si=iBvOvsaGwgs_hEu2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="swiper-slide">
+        <h4>마스터</h4>
         <img src="../assets/poster03.jpg" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IDL-hyjxxM0?si=eZzhLApqUBP4NJfH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="swiper-slide">
+        <h4>마약왕</h4>
         <img src="../assets/poster04.jpg" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/A4ewtUIqt88?si=G8grydLE4n8FW0UA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="swiper-slide">
+        <h4>3일의 휴가</h4>
         <img src="../assets/poster05.jpg" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yAHvmCLiICA?si=qgZmcF5xTIvp0EN_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="swiper-slide">
-        <img src="../assets/poster06" />
+        <h4>서울의 봄</h4>
+        <img src="../assets/poster06.jpg" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-AZ7cnwn2YI?si=dLCpCirJ-19MUIuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
 
 
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	
+	
 
+<script type="text/javascript" src="../home/script.js"></script>
 
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-  </script>
 
 <%@ include file="../layout/footer.jsp" %>
 
@@ -113,26 +124,7 @@
 		.bdstyle {
 			background-color: black !important;
 		}
-		.iframe{
-			position:center;
-		}
-		.movie-container {
-            display: flex;
-            margin: 20px;
-        }
-		.image-container img {
-            object-fit: cover;
-            height: 250px; /* Adjust the height as needed */
-            width: 450px; /* Adjust the width as needed */
-        }
-        .image-container {
-            order: -1; /* Change the order to -1 for odd movie containers */
-        }
-        
 
-        table {
-            margin: 20px;
-        }
         h1 {
 			color: grey;
 		}

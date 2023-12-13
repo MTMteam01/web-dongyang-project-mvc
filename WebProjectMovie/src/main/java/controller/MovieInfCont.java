@@ -26,10 +26,10 @@ public class MovieInfCont extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-    	String year = request.getParameter("year");
-        String apiUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+year;
-        String jsonData = getJsonData(apiUrl);       
-        
+    	//String year = request.getParameter("year");
+        String apiUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&itemPerPage=10&targetDt=20231201";
+        System.out.println(getJsonData(apiUrl));
+        String jsonData = getJsonData(apiUrl);
         JSONParser parser = new JSONParser();
         try {
 			JSONObject jsonObj = (JSONObject) parser.parse(jsonData);
@@ -51,7 +51,6 @@ public class MovieInfCont extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
     }
 
     private String getJsonData(String apiUrl) throws IOException {
