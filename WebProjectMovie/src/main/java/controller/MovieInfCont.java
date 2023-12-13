@@ -26,10 +26,10 @@ public class MovieInfCont extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-    	String year = request.getParameter("year");
-        String apiUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+year;
-        String jsonData = getJsonData(apiUrl);       
-        
+    	//String year = request.getParameter("year");
+        String apiUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&itemPerPage=10&targetDt=20231212";
+        System.out.println(getJsonData(apiUrl));
+        String jsonData = getJsonData(apiUrl);
         JSONParser parser = new JSONParser();
         try {
 			JSONObject jsonObj = (JSONObject) parser.parse(jsonData);
@@ -42,8 +42,9 @@ public class MovieInfCont extends HttpServlet {
 				String rank = (String) dailyBoxOffice.get("rank");
 				String movieNm = (String) dailyBoxOffice.get("movieNm");
 				String openDt = (String) dailyBoxOffice.get("openDt");
-				String audiCnt = (String) dailyBoxOffice.get("audiCnt");
-				saveToDatabase(rank, movieNm, openDt, audiCnt);
+				String audiAcc = (String) dailyBoxOffice.get("audiAcc");
+				
+				saveToDatabase(rank, movieNm, openDt, audiAcc);
 		    }
 		    response.sendRedirect("TEST!!!/ManagerPage.jsp");
 			
@@ -51,7 +52,6 @@ public class MovieInfCont extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
     }
 
     private String getJsonData(String apiUrl) throws IOException {
@@ -73,8 +73,8 @@ public class MovieInfCont extends HttpServlet {
         return response.toString();
     }
 
-    private void saveToDatabase(String rank, String movieNm, String openDt, String audiCnt) {
-    		System.out.println("순위: " + rank + ", 영화제목: " + movieNm + ", 개봉: " + openDt + ", 관객수: " + audiCnt);
+    private void saveToDatabase(String rank, String movieNm, String openDt, String audiAcc) {
+
             Connection conn = null;
             PreparedStatement pstmt = null;
             PreparedStatement pstmt2 = null;
@@ -88,7 +88,7 @@ public class MovieInfCont extends HttpServlet {
                 pstmt2.setString(1, rank);
                 pstmt2.setString(2, movieNm);
                 pstmt2.setString(3, openDt);
-                pstmt2.setString(4, audiCnt);
+                pstmt2.setString(4, audiAcc);
                 pstmt2.executeUpdate();
 	        } catch (Exception e) {
 	            e.printStackTrace();

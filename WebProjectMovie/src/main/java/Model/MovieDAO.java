@@ -25,6 +25,7 @@ public class MovieDAO {
             	 movie.put("rank", rs.getString("rank"));
             	 movie.put("movieNm", rs.getString("movieNm"));
             	 movie.put("openDt", rs.getString("openDt"));
+            	 movie.put("audiAcc", rs.getString("audiAcc"));
 
                  movies.add(movie);    	
             }
@@ -45,17 +46,18 @@ public class MovieDAO {
         
         try {
         	conn = JDBCUtil.getConnection();
-            String strQuery = "select * from movie_data";
+            String strQuery = "SELECT * FROM movie_data";
             stmt = conn.createStatement();
             rs = stmt.executeQuery(strQuery);
             
             while(rs.next()) {
             	 Map<String, String> movie = new HashMap<>();
-            	 movie.put("movieNm", rs.getString("movieNm"));
-            	 movie.put("prdtYear", rs.getString("prdtYear"));
-            	 movie.put("openDt", rs.getString("openDt"));
-            	 movie.put("genreAlt", rs.getString("genreAlt"));
-            	 movie.put("repNationNm", rs.getString("repNationNm"));
+            	 movie.put("movieId", rs.getString("movieId"));
+            	 movie.put("title", rs.getString("title"));
+            	 movie.put("year", rs.getString("year"));
+            	 movie.put("date", rs.getString("date"));
+            	 movie.put("genre", rs.getString("genre"));
+            	 movie.put("nation", rs.getString("nation"));
 
             	 allmovies.add(movie);    	
             }

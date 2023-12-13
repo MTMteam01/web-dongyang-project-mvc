@@ -33,10 +33,11 @@
     <div class="card h-100">
       <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87554/87554_320.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">서울의 봄</h5>
-        <p class="card-text">
+        <h5 class="card-title">
         <% 
         Map<String, String> movie0 = movieList.get(0);%>
+        <%= movie0.get("movieNm") %></h5>
+        <p class="card-text">
         랭킹: <%= movie0.get("rank") %><br>
         누적관객수: <%= movie0.get("audiAcc") %><br>
 		<%= movie0.get("openDt")%> 개봉<br></p>
@@ -47,12 +48,13 @@
     <div class="card">
       <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87594/87594_320.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">3일의 휴가</h5>
-        <p class="card-text">
+        <h5 class="card-title">       
         <% 
-    	Map<String, String> movie1 = movieList.get(1); %>
-		랭킹: <%= movie1.get("rank") %><br>
-		누적관객수: <%= movie1.get("audiAcc") %><br>
+        Map<String, String> movie1 = movieList.get(1);%>
+        <%= movie1.get("movieNm") %></h5>
+        <p class="card-text">
+        랭킹: <%= movie1.get("rank") %><br>
+        누적관객수: <%= movie1.get("audiAcc") %><br>
 		<%= movie1.get("openDt")%> 개봉<br></p>
       </div>
     </div>
@@ -61,10 +63,12 @@
     <div class="card">
       <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87596/87596_320.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">나폴레옹</h5>
-        <p class="card-text">        
+        <h5 class="card-title">
         <% 
         Map<String, String> movie2 = movieList.get(2);%>
+        <%= movie2.get("movieNm") %></h5>
+        <p class="card-text">        
+
         랭킹: <%= movie2.get("rank") %><br>
         누적관객수: <%= movie2.get("audiAcc") %><br>
 		<%= movie2.get("openDt")%> 개봉<br></p>
@@ -73,12 +77,14 @@
   </div>
   <div class="col">
     <div class="card">
-      <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87453/87453_320.jpg" class="card-img-top img-fluid" alt="...">
+      <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87716/87716_320.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">뽀로로 극장판 슈퍼스타 대모험</h5>
-        <p class="card-text">
+        <h5 class="card-title">
         <% 
         Map<String, String> movie3 = movieList.get(3);%>
+        <%= movie3.get("movieNm") %>
+        </h5>
+        <p class="card-text">
         랭킹: <%= movie3.get("rank") %><br>
         누적관객수: <%= movie3.get("audiAcc") %><br>
 		<%= movie3.get("openDt")%> 개봉<br></p>
@@ -89,10 +95,11 @@
     <div class="card">
       <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87718/87718_320.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">싱글인서울</h5>
-        <p class="card-text">        
+        <h5 class="card-title">
         <% 
         Map<String, String> movie4 = movieList.get(4);%>
+        <%= movie4.get("movieNm") %></h5>
+        <p class="card-text">        
         랭킹: <%= movie4.get("rank") %><br>
         누적관객수: <%= movie4.get("audiAcc") %><br>
 		<%= movie4.get("openDt")%> 개봉<br></p>
@@ -101,12 +108,13 @@
   </div>
     <div class="col">
     <div class="card">
-      <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87716/87716_1000.jpg" class="card-img-top img-fluid" alt="...">
+      <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87907/87907_320.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">괴물</h5>
-        <p class="card-text">
+        <h5 class="card-title">
         <% 
         Map<String, String> movie5 = movieList.get(5);%>
+        <%= movie5.get("movieNm") %></h5>
+        <p class="card-text">
         랭킹: <%= movie5.get("rank") %><br>
         누적관객수: <%= movie5.get("audiAcc") %><br>
 		<%= movie5.get("openDt")%> 개봉<br></p>
@@ -115,12 +123,14 @@
   </div>
       <div class="col">
     <div class="card">
-      <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87550/87550_1000.jpg" class="card-img-top img-fluid" alt="...">
+      <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87753/87753_320.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">프레디의 피자가게</h5>
-        <p class="card-text">
+        <h5 class="card-title">
         <% 
         Map<String, String> movie6 = movieList.get(6);%>
+        <%= movie6.get("movieNm") %></h5>
+        <p class="card-text">
+        
         랭킹: <%= movie6.get("rank") %><br>
         누적관객수: <%= movie6.get("audiAcc") %><br>
 		<%= movie6.get("openDt")%> 개봉<br></p>
@@ -129,15 +139,49 @@
   </div>
         <div class="col">
     <div class="card">
-      <img src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20231012_72%2F1697089726606AX0mo_JPEG%2Fmovie_image.jpg" class="card-img-top img-fluid" alt="...">
+      <img src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20231103_182%2F1698995150444NElMy_JPEG%2Fmovie_image.jpg" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
-        <h5 class="card-title">극장판 우당탕탕 은하안정단: 진정한용기</h5>
-        <p class="card-text">
+        <h5 class="card-title">
         <% 
         Map<String, String> movie7 = movieList.get(7);%>
+        <%= movie7.get("movieNm") %></h5>
+        <p class="card-text">
+        
         랭킹: <%= movie7.get("rank") %><br>
         누적관객수: <%= movie7.get("audiAcc") %><br>
 		<%= movie7.get("openDt")%> 개봉<br></p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20231026_9%2F16983044100188P1Ff_JPEG%2Fmovie_image.jpg" class="card-img-top img-fluid" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">
+        <% 
+        Map<String, String> movie8 = movieList.get(8);%>
+        <%= movie8.get("movieNm") %></h5>
+        <p class="card-text">
+        
+        랭킹: <%= movie8.get("rank") %><br>
+        누적관객수: <%= movie8.get("audiAcc") %><br>
+		<%= movie8.get("openDt")%> 개봉<br></p>
+      </div>
+    </div>
+  </div>
+    <div class="col">
+    <div class="card">
+      <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87550/87550_320.jpg" class="card-img-top img-fluid" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">
+        <% 
+        Map<String, String> movie9 = movieList.get(9);%>
+        <%= movie9.get("movieNm") %></h5>
+        <p class="card-text">
+        
+        랭킹: <%= movie9.get("rank") %><br>
+        누적관객수: <%= movie9.get("audiAcc") %><br>
+		<%= movie9.get("openDt")%> 개봉<br></p>
       </div>
     </div>
   </div>
