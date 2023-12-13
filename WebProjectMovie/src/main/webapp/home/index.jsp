@@ -20,7 +20,7 @@
 	            <iframe width="560" height="315" src="https://www.youtube.com/embed/-AZ7cnwn2YI?si=JcHN1kdYTJZ1FV5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 	        </div>
 	        <div class="image-container">
-	            <img src="../assets/seoulSpring.jpg" alt="서울의 봄 찬란한 순간" style="object-fit: cover; height: 315px; width: 560px;">
+	            <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87596/87596_320.jpg" alt="다른 영화 포스터" style="object-fit: cover; height: 315px; width: 560px;">
 	        </div>
 	    </div>
 	
@@ -30,7 +30,7 @@
 	            <iframe width="560" height="315" src="https://www.youtube.com/embed/RcT1oif6j5k?si=oFDKo4oexgedVolG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 	        </div>
 	        <div class="image-container">
-	            <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87594/87594_320.jpg" alt="다른 영화 포스터" style="object-fit: cover; height: 315px; width: 560px;">
+	            <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87716/87716_320.jpg" alt="다른 영화 포스터" style="object-fit: cover; height: 315px; width: 560px;">
 	        </div>
 	    </div>
   	</div>
