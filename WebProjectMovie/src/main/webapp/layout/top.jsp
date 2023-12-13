@@ -19,9 +19,9 @@
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
         <li><a href="/WebProjectMovie/home/index.jsp" class="nav-link px-2 link-secondary text-reset">HOME</a></li>
-        <li><a href="/WebProjectMovie/movie/movieForm.jsp" class="nav-link px-2 link-dark text-reset">MOVIE</a></li>
-        <li><a href="../reserve/reserveForm.jsp" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
-        <li><a href="../home/moviefaq.jsp" class="nav-link px-2 link-dark text-reset">HELP</a></li>
+        <li><a href="/WebProjectMovie/movie/detail/movie_card.jsp" class="nav-link px-2 link-dark text-reset">MOVIE</a></li>
+        <li><a href="/WebProjectMovie/reserve/reserveForm.jsp" class="nav-link px-2 link-dark text-reset">RESERVE</a></li>
+        <li><a href="/WebProjectMovie/home/moviefaq.jsp" class="nav-link px-2 link-dark text-reset">HELP</a></li>
 
       </ul>
       <div class="col-md-3 text-end">
