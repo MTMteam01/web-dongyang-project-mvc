@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
 
+import com.mysql.cj.Session;
+
 import common.JDBCUtil;
-
-
 
 public class MemberDAO {
 
@@ -35,9 +35,71 @@ public class MemberDAO {
         }
         
         return loginCon;
-    }	
-	
-	
+    }
+  //-------추가사항-------
+    public boolean userModify(MemberDTO mDTO) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        boolean modify = false;
+
+        try {
+            conn = JDBCUtil.getConnection();
+
+            // 사용자의 필드가 비어있지 않은 경우에만 해당 필드를 업데이트
+            StringBuilder strQuery = new StringBuilder("UPDATE users SET ");
+            List<String> updateFields = new ArrayList<>();
+            if (!mDTO.getPassword().isEmpty()) {
+                updateFields.add("password = ?");
+            }
+            if (!mDTO.getEmail().isEmpty()) {
+                updateFields.add("email = ?");
+            }
+            if (!mDTO.getName().isEmpty()) {
+                updateFields.add("name = ?");
+            }
+            if (!mDTO.getPhone().isEmpty()) {
+                updateFields.add("phone = ?");
+            }
+
+            if (!updateFields.isEmpty()) {
+                strQuery.append(String.join(", ", updateFields));
+                strQuery.append(" WHERE id = ?");
+                
+                pstmt = conn.prepareStatement(strQuery.toString());
+
+                int parameterIndex = 1;
+
+                // 필드 값이 비어있지 않은 경우에만 매개변수 설정
+                if (!mDTO.getPassword().isEmpty()) {
+                    pstmt.setString(parameterIndex++, mDTO.getPassword());
+                }
+                if (!mDTO.getEmail().isEmpty()) {
+                    pstmt.setString(parameterIndex++, mDTO.getEmail());
+                }
+                if (!mDTO.getName().isEmpty()) {
+                    pstmt.setString(parameterIndex++, mDTO.getName());
+                }
+                if (!mDTO.getPhone().isEmpty()) {
+                    pstmt.setString(parameterIndex++, mDTO.getPhone());
+                }
+
+                // 마지막으로 사용자 ID 설정
+                pstmt.setString(parameterIndex, mDTO.getId());
+
+                // 쿼리 실행
+                pstmt.executeUpdate();
+
+                modify = true; // 업데이트가 성공하면 true로 설정
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            JDBCUtil.close(pstmt, conn);
+        }
+
+        return modify;
+    }
+	//----------------
     public boolean userInsert(MemberDTO mDTO) {
     	Connection conn = null;
         PreparedStatement pstmt = null;

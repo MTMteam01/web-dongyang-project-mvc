@@ -41,14 +41,14 @@ public class ReserveDAO {
                 }
             }
         
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	
+	    return reservedSeats;
+	}
 
-    return reservedSeats;
-}
-
-    public void saveReservation(String id, String movieId, String theaterId, String date, String seat) {
+	 public void saveReservation(String id, String movieId, String theaterId, String date, String seat) {
     	Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -81,37 +81,40 @@ public class ReserveDAO {
     	}
 	}
     
-    public List<String> getUserReservations(String userId) {
-        List<String> userReservations = new ArrayList<>();
+    //----------수정사항---------
+    public List<Map<String, String>> getUserReservations(String userId) {
+    	List<Map<String, String>> reserves = new ArrayList<>();
     	Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         
         try {
-        		conn = JDBCUtil.getConnection();
-        		
-        		String sql = "SELECT movie_id, theater_id, date, seat FROM reservations WHERE id = ?";
-                pstmt = conn.prepareStatement(sql);
-        		PreparedStatement statement = conn.prepareStatement(sql);
-                rs = pstmt.executeQuery(sql);
-        		statement.setString(1, userId);
-                
+        	conn = JDBCUtil.getConnection();
+            String strQuery = "select * from reservations where id = ?";
+            pstmt = conn.prepareStatement(strQuery);
+            pstmt.setString(1, userId);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()) {
+            	 Map<String, String> reserve = new HashMap<>();
+            	 reserve.put("id", rs.getString("id"));
+            	 reserve.put("movie_id", rs.getString("movie_id"));
+            	 reserve.put("theater_id", rs.getString("theater_id"));
+            	 reserve.put("date", rs.getString("date"));
+            	 reserve.put("seat", rs.getString("seat"));
 
-                    while (rs.next()) {
-                        String reservationInfo = "영화: " + rs.getString("movie_id") +
-                                ", 극장: " + rs.getString("theater_id") +
-                                ", 날짜: " + rs.getString("date") +
-                                ", 좌석: " + rs.getString("seat");
-                        userReservations.add(reservationInfo);
-                    }
+            	 reserves.add(reserve);    	
+            }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            System.out.println("Exception" + ex);
+        } finally {
+        	JDBCUtil.close(rs, pstmt, conn);
         }
-        return userReservations;
-
+        return reserves;
     }
-    
+
+    //-------------------
     public List<Map<String, String>> ReserveList() {
     	List<Map<String, String>> reserves = new ArrayList<>();
     	Connection conn = null;
@@ -142,7 +145,7 @@ public class ReserveDAO {
         }
         return reserves;
     }
-
+    
     public boolean userDelete(ReserveDTO rDTO) {
     	Connection conn = null;
         PreparedStatement pstmt = null;
