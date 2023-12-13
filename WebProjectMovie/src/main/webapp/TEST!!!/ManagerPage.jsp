@@ -3,6 +3,7 @@
 
 <%@ page import="Model.MemberDAO" %>
 <%@ page import="Model.MovieDAO" %>
+<%@ page import="test.ReserveDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>    
 <%
@@ -10,7 +11,9 @@
     List<Map<String, String>> memberList = mDAO.MemberList();
     MovieDAO mvDAO = new MovieDAO();
     List<Map<String, String>> movieList = mvDAO.MovieList();
-    List<Map<String, String>> AllMovie = mvDAO.AllMovie();
+    List<Map<String, String>> allMovie = mvDAO.AllMovie();
+    ReserveDAO rDAO = new ReserveDAO();
+    List<Map<String, String>> reserveList = rDAO.ReserveList();
 %>
 
 <!DOCTYPE html>
@@ -54,16 +57,18 @@
 					<button type="submit" class="btn btn-dark me-2" >탈퇴</button>
 				</form>
 				<br><br>
-				<h3>박스오피스 불러오기</h3>
+				<h3>박스오피스 조회</h3>
 				<br>
-				<form method="get" action="/WebProjectMovie/boxoffice.do">
-					<label>테이블 초기화 : </label> <button type="submit" class="btn btn-dark me-2" >실행</button>
-				</form>
-				<form method="get" action="/WebProjectMovie/movieinfo.do">
-					<input type="text" class="inp" style="background:transparent;color:white;" name="year" placeholder="기준 연도 (예: 20230101)" size="15">
-					<button type="submit" class="btn btn-dark me-2" >조회</button>
-				</form>
-				<br>
+				<!-- 
+					<form method="get" action="/WebProjectMovie/boxoffice.do">
+						<label>테이블 초기화 : </label> <button type="submit" class="btn btn-dark me-2" >실행</button>
+					</form>
+					<form method="get" action="/WebProjectMovie/movieinfo.do">
+						<input type="text" class="inp" style="background:transparent;color:white;" name="year" placeholder="기준 연도 (예: 20230101)" size="15">
+						<button type="submit" class="btn btn-dark me-2" >조회</button>
+					</form>
+					<br>
+				 -->
 				<table class="table table-dark w-100" border="1">
 				    <tr>
 				        <th>랭킹</th>
@@ -80,7 +85,39 @@
 				</table>
 				<br>
 				<h3>예매내역 불러오기</h3>
-				전체 고객 예매내역 불러오는곳
+				<br>
+				<table class="table table-dark w-100" border="1">
+				    <tr>
+				        <th>ID</th>
+				        <th>영화명</th>
+				        <th>극장명</th>
+				        <th>시간</th>
+				        <th>좌석</th>
+				    </tr>
+			    	<% for (Map<String, String> reserves : reserveList) { %>
+			        <tr>
+			            <td><%= reserves.get("id") %></td>
+			            <td><%= reserves.get("movie_id") %></td>
+			            <td><%= reserves.get("theater_id") %></td>
+			            <td><%= reserves.get("date") %></td>
+			            <td><%= reserves.get("seat") %></td>
+			        </tr>
+			    	<% } %>
+				</table>
+	    		<form method="post" action="/WebProjectMovie/reservecancle.do" >
+	    			<input type="text" class="inp" style="background:transparent;color:white;" name="id" placeholder="아이디 입력" size="15">
+	    			<br><br>
+	    			<label for="movieSelect" class="form-label" style="color:#68c1a6">
+	    			영화 선택
+	    			<select class="form-select w-75" id="movieSelect" name="movieId" style="background-color:black;color:#95a5a6;">
+		        		<option selected disabled>영화를 선택하세요</option>
+		        		<option value="movie1">movie1</option>
+		        		<option value="movie2">movie2</option>
+		        		<option value="movie3">movie3</option>
+		    		</select>
+	    			</label>
+		    		<button type="submit" class="btn btn-dark me-2" >삭제</button>
+	    		</form>
 			</div>
 			<div id="Administor_div2">
 				<br>
@@ -90,25 +127,29 @@
 					<label>테이블 초기화 : </label> <button type="submit" class="btn btn-dark me-2" >실행</button>
 				</form>
 				<form method="get" action="/WebProjectMovie/moviemenu.do">
-					<input type="text" class="inp" style="background:transparent;color:white;" name="count" placeholder="불러올 수 (예 : 20)" size="15">
+					<input type="text" class="inp_2" style="background:transparent;color:white;" name="count" placeholder="개수 (예 : 20)">
+					<input type="text" class="inp" style="background:transparent;color:white;" name="releaseDts" placeholder="개봉일 시작 (예 : 20230101)">
+					<input type="text" class="inp" style="background:transparent;color:white;" name="releaseDte" placeholder="개봉일 종료 (예 : 20231201)">
 					<button type="submit" class="btn btn-dark me-2" >조회</button>
 				</form>
 				<br>
 				<table class="table table-dark w-100" border="1">
 				    <tr>
+				        <th>ID</th>
 				        <th>제목</th>
 				        <th>년도</th>
-				        <th>개봉날짜</th>
+				        <th>날짜</th>
 				        <th>장르</th>
 				        <th>국가</th>
 				    </tr>
-				    <% for (Map<String, String> movies : AllMovie) { %>
+				    <% for (Map<String, String> movies : allMovie) { %>
 				    <tr>
-				         <td><%= movies.get("movieNm") %></td>
-				         <td><%= movies.get("prdtYear") %></td>
-				         <td><%= movies.get("openDt") %></td>
-				         <td><%= movies.get("genreAlt") %></td>
-				         <td><%= movies.get("repNationNm") %></td>
+				         <td><%= movies.get("movieId") %></td>
+				         <td><%= movies.get("title") %></td>
+				         <td><%= movies.get("year") %></td>
+				         <td><%= movies.get("date") %></td>
+				         <td><%= movies.get("genre") %></td>
+				         <td><%= movies.get("nation") %></td>
 				    </tr>
 				    <% } %>
 				</table>
@@ -146,7 +187,13 @@
 			    border-bottom:2px solid rgb(204,255,204);
 			    width:200px;
 			    height:30px;
-			}	
+			}
+			.inp_2{
+				border:0;
+			    border-bottom:2px solid rgb(204,255,204);
+			    width:100px;
+			    height:30px;
+			}
 	        .bo {
 	            text-align: center;
 	        }

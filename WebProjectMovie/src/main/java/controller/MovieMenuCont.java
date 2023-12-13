@@ -19,6 +19,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import common.JDBCUtil;
+import Model.MovieDTO;
 
 @WebServlet("/moviemenu.do")
 public class MovieMenuCont extends HttpServlet {
@@ -26,25 +27,49 @@ public class MovieMenuCont extends HttpServlet {
      
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String count = request.getParameter("count");
-        String apiUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=f5eef3421c602c6cb7ea224104795888&itemPerPage="+count;
+		String releaseDts = request.getParameter("releaseDts");
+		String releaseDte = request.getParameter("releaseDte");
+        String apiUrl = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&movieId=B&releaseDts="+releaseDts+"&releaseDte="+releaseDte+"&plot&ratedYn=y&listCount="+count+"&ServiceKey=ZWKXQFX4H4XB91QCSA4U";
         String jsonData = getJsonData(apiUrl);
         
         JSONParser parser = new JSONParser();
         try {
-			JSONObject jsonObj = (JSONObject) parser.parse(jsonData);
-			JSONObject movieListResult = (JSONObject) jsonObj.get("movieListResult");
-		    JSONArray movieList = (JSONArray) movieListResult.get("movieList");
+        	JSONObject jsonObj = (JSONObject) parser.parse(jsonData);
+        	JSONArray movieListResult = (JSONArray) jsonObj.get("Data");
+        	JSONObject movieData = (JSONObject) movieListResult.get(0); // 배열의 첫 번째 요소를 가져온다.
+        	JSONArray movieList = (JSONArray) movieData.get("Result");
 			
 		    for(Object movieObj : movieList) {
 		    	JSONObject movie = (JSONObject) movieObj;
 				
-				String movieNm = (String) movie.get("movieNm");
-				String prdtYear = (String) movie.get("prdtYear");
-				String openDt = (String) movie.get("openDt");
-				String genreAlt = (String) movie.get("genreAlt");
-				String repNationNm = (String) movie.get("repNationNm");
+		    	String movieId = (String) movie.get("movieId");
+				String title = (String) movie.get("title");
+				String prodYear = (String) movie.get("prodYear");
+				String repRlsDate = (String) movie.get("repRlsDate");
+				String genre = (String) movie.get("genre");
+				String nation = (String) movie.get("nation");
+	        	
+			    JSONObject plots = (JSONObject) movie.get("plots");
+			    JSONArray plotArray = (JSONArray) plots.get("plot");
+			    JSONObject plotObject = (JSONObject) plotArray.get(0);
+			    String plotText = (String) plotObject.get("plotText");
 				
-				saveToDatabase(movieNm, prdtYear, openDt, genreAlt, repNationNm);
+				//String plotText = (String) movie.get("plotText");
+				String posterUrl = (String) movie.get("posters");				
+				String rating = (String) movie.get("rating");
+				
+				MovieDTO mDTO = new MovieDTO();
+				mDTO.setMovieId(movieId);
+				mDTO.setTitle(title);
+				mDTO.setProdYear(prodYear);
+				mDTO.setRepRlsDate(repRlsDate);
+				mDTO.setGenre(genre);
+				mDTO.setNation(nation);
+				mDTO.setPosterUrl(posterUrl);
+				mDTO.setPlot(plotText);
+				mDTO.setRating(rating);
+				
+				saveToDatabase(mDTO);
 		    }
 		    response.sendRedirect("TEST!!!/ManagerPage.jsp");
 			
@@ -52,7 +77,6 @@ public class MovieMenuCont extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-          
     }
 
     private String getJsonData(String apiUrl) throws IOException {
@@ -74,8 +98,7 @@ public class MovieMenuCont extends HttpServlet {
         return response.toString();
     }
     
-    private void saveToDatabase(String movieNm, String prdtYear, String openDt, String genreAlt, String repNationNm) {
-    		System.out.println("영화명: " + movieNm + ", 년도: " + prdtYear + ", 개봉날짜: " + openDt + ", 장르: " + genreAlt + ", 국가: " + repNationNm );
+    private void saveToDatabase(MovieDTO mDTO) {
             Connection conn = null;
             PreparedStatement pstmt = null;
             PreparedStatement pstmt2 = null;
@@ -84,13 +107,17 @@ public class MovieMenuCont extends HttpServlet {
             try{
                 conn = JDBCUtil.getConnection();
   
-                String insertQuery = "INSERT INTO movie_data VALUES (?, ?, ?, ?, ?)";
+                String insertQuery = "INSERT INTO movie_data VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 pstmt2 = conn.prepareStatement(insertQuery);
-                pstmt2.setString(1, movieNm);
-                pstmt2.setString(2, prdtYear);
-                pstmt2.setString(3, openDt);
-                pstmt2.setString(4, genreAlt);
-                pstmt2.setString(5, repNationNm);
+                pstmt2.setString(1, mDTO.getMovieId());
+                pstmt2.setString(2, mDTO.getTitle());
+                pstmt2.setString(3, mDTO.getProdYear());
+                pstmt2.setString(4, mDTO.getRepRlsDate());
+                pstmt2.setString(5, mDTO.getGenre());
+                pstmt2.setString(6, mDTO.getNation());
+                pstmt2.setString(7, mDTO.getRating());
+                pstmt2.setString(8, mDTO.getPosterUrl());
+                pstmt2.setString(9, mDTO.getPlot());
                 pstmt2.executeUpdate();
 	        } catch (Exception e) {
 	            e.printStackTrace();

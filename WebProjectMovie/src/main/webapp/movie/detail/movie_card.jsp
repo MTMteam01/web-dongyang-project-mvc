@@ -19,7 +19,7 @@
 %>
 <!DOCTYPE html>
 <html>
-<head>
+<head>ㅇ
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
 <meta charset="UTF-8">
@@ -27,7 +27,7 @@
 </head>
 <body class="bdg">
 <%@ include file="../../layout/top.jsp" %>
-<h1 style="text-align: center;"> ALL MOVIES </h1>
+<h1 style="text-align: center;"> ALL MOVIES [12/13] </h1>
 <div class="row row-cols-1 row-cols-md-4 g-4">
   <div class="col">
     <div class="card h-100">
@@ -41,6 +41,31 @@
         랭킹: <%= movie0.get("rank") %><br>
         누적관객수: <%= movie0.get("audiAcc") %><br>
 		<%= movie0.get("openDt")%> 개봉<br></p>
+		<!-- Vertically centered modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  영화 상세
+</button>
+
+<!-- Modal -->
+<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-black">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      	<%@ include file="../movie_info/movie1.jsp" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+		
       </div>
     </div>
   </div>
@@ -56,6 +81,28 @@
         랭킹: <%= movie1.get("rank") %><br>
         누적관객수: <%= movie1.get("audiAcc") %><br>
 		<%= movie1.get("openDt")%> 개봉<br></p>
+		
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie2.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -72,6 +119,27 @@
         랭킹: <%= movie2.get("rank") %><br>
         누적관객수: <%= movie2.get("audiAcc") %><br>
 		<%= movie2.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie3.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -88,6 +156,27 @@
         랭킹: <%= movie3.get("rank") %><br>
         누적관객수: <%= movie3.get("audiAcc") %><br>
 		<%= movie3.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie4.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -103,6 +192,27 @@
         랭킹: <%= movie4.get("rank") %><br>
         누적관객수: <%= movie4.get("audiAcc") %><br>
 		<%= movie4.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie5.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -118,6 +228,27 @@
         랭킹: <%= movie5.get("rank") %><br>
         누적관객수: <%= movie5.get("audiAcc") %><br>
 		<%= movie5.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie6.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -134,6 +265,27 @@
         랭킹: <%= movie6.get("rank") %><br>
         누적관객수: <%= movie6.get("audiAcc") %><br>
 		<%= movie6.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal7">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie7.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -150,6 +302,27 @@
         랭킹: <%= movie7.get("rank") %><br>
         누적관객수: <%= movie7.get("audiAcc") %><br>
 		<%= movie7.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal8">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie8.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -166,6 +339,27 @@
         랭킹: <%= movie8.get("rank") %><br>
         누적관객수: <%= movie8.get("audiAcc") %><br>
 		<%= movie8.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal9">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie9.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -182,6 +376,27 @@
         랭킹: <%= movie9.get("rank") %><br>
         누적관객수: <%= movie9.get("audiAcc") %><br>
 		<%= movie9.get("openDt")%> 개봉<br></p>
+		<button type="button" class="btn btn-primary bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal10">
+  		영화 상세
+  		</button>
+
+			<!-- Modal -->
+			<div class="modal fade modal-xl" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content bg-black">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			      	<%@ include file="../movie_info/movie10.jsp" %>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
       </div>
     </div>
   </div>
@@ -189,6 +404,19 @@
 <%@ include file="../../layout/footer.jsp" %>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
+<script>
+const modalOpenButton = document.getElementById('modalOpenButton');
+const modalCloseButton = document.getElementById('modalCloseButton');
+const modal = document.getElementById('modalContainer');
+
+modalOpenButton.addEventListener('click', () => {
+  modal.classList.remove('hidden');
+});
+
+modalCloseButton.addEventListener('click', () => {
+  modal.classList.add('hidden');
+});
+</script>
 <style>
 	.bdg,
 	.card-body
