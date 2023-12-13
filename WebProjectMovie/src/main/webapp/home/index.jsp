@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>메인페이지</title>
+    <title>홈</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -14,27 +14,27 @@
 <body class="bdstyle">
 
 <%@ include file="../layout/top.jsp" %>    
-  
-	<div class="movie-container">
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-AZ7cnwn2YI?si=JcHN1kdYTJZ1FV5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <div class="image-container">
-            <img src="../assets/seoulSpring.jpg" alt="서울의 봄 찬란한 순간" style="object-fit: cover; height: 315px; width: 560px;">
-        </div>
-    </div>
-
-    <!-- Movie 2 -->
-    <div class="movie-container">
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/RcT1oif6j5k?si=oFDKo4oexgedVolG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <div class="image-container">
-            <img src="../assets/poster.png" alt="다른 영화 포스터" style="object-fit: cover; height: 315px; width: 560px;">
-        </div>
-    </div>
-             <!-- 테이블 형태의 공지사항 작성 -->
-            <table class="table table-dark w-75">
+  	<div class="movie-container">
+  		<div>
+	        <div class="video-container">
+	            <iframe width="560" height="315" src="https://www.youtube.com/embed/-AZ7cnwn2YI?si=JcHN1kdYTJZ1FV5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	        </div>
+	        <div class="image-container">
+	            <img src="../assets/seoulSpring.jpg" alt="서울의 봄 찬란한 순간" style="object-fit: cover; height: 315px; width: 560px;">
+	        </div>
+	    </div>
+	
+	    <!-- Movie 2 -->
+	    <div class="movie-container2">
+	        <div class="video-container">
+	            <iframe width="560" height="315" src="https://www.youtube.com/embed/RcT1oif6j5k?si=oFDKo4oexgedVolG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	        </div>
+	        <div class="image-container">
+	            <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87594/87594_320.jpg" alt="다른 영화 포스터" style="object-fit: cover; height: 315px; width: 560px;">
+	        </div>
+	    </div>
+  	</div>
+  			<table class="table table-dark w-75">
               <thead>
                 <tr>
                   <th class="mobile" style="width:55px; text-align:center;">번호</th>
@@ -65,6 +65,7 @@
                 </tr>
               </tbody>
             </table>
+      
 <%@ include file="../layout/footer.jsp" %>
 
 </body>
@@ -79,6 +80,12 @@
             display: flex;
             margin: 20px;
         }
+        .movie-container{
+        	margin-left: 12%;
+        }
+        .movie-container2{
+        	margin-left: 10px;
+        }
 		.image-container img {
             object-fit: cover;
             height: 250px; /* Adjust the height as needed */
@@ -89,7 +96,7 @@
         }
 
         table {
-            margin: 20px;
+            margin-left: 13%;
         }
         h1 {
 			color: grey;
