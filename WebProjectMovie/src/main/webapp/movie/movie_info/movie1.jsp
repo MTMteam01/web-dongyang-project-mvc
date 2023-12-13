@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>영화 제목</h1>
+            <h1>서울의 봄</h1>
         </header>
         <section class="movie-details">
             <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87554/87554_320.jpg" alt="영화 포스터">
