@@ -25,6 +25,7 @@ public class MovieDAO {
             	 movie.put("rank", rs.getString("rank"));
             	 movie.put("movieNm", rs.getString("movieNm"));
             	 movie.put("openDt", rs.getString("openDt"));
+            	 movie.put("audiAcc", rs.getString("audiAcc"));
 
                  movies.add(movie);    	
             }

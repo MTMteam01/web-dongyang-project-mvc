@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>HOME</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -166,6 +166,7 @@
 	<div class="a02">
 	<iframe width="1200" height="500" src="https://www.youtube.com/embed/Z1_ymjF0znY?si=FrFNgaR7nPZlFx7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 	</div>
+
 <%@ include file="../layout/footer.jsp" %>
 
 </body>
