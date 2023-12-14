@@ -15,8 +15,7 @@
       pagination: {
         el: ".swiper-pagination",
       },
-      initialSlide: middleSlideIndex,
-    });
+	});
     swiper.on('slideChange', function () {
         updateMovieDetails();
     });
